@@ -1,5 +1,5 @@
 # ProjectDatabase
 - Khang Dang (@khangdang123)
 - Jordan Nguyen (@jordannguyen321)
-- Andy Neidhart (@username)
+- Andy Neidhart (@templa23)
 - Jonathan Kwong (@username)
