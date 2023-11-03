@@ -1,26 +1,26 @@
 ## <remove all of the example text and notes in < > such as this one>
 
 ## Functional Requirements
-1. requirement <should be 1 sentence that describes requirement>
-2. requirement
-3. requirement
-4. requirement
-5. requirement
-6. requirement
-7. requirement
-8. requirement
-9. requirement
-10. requirement
-11. requirement
-12. requirement
-13. requirement
-14. requirement
+1. Create Notes <The user should be able to create a new empty note>
+2. Edit Content of notes <The user should be able to edit the content of the notes that they created>
+3. Delete Notes <The user should be able to delete any notes that they created>
+4. Share Notes <The user should be able to share their notes by creating a link or a download file>
+5. Save as draft <The user should be able to save an in-progress note as a draft before it is shared publicly or privately>
+6. Add comments <The user should be able to add comments on their notes>
+7. Add attachments <The user should be able to add certain types of attachments to their notes>
+8. Advanced Search <The user should be able to search for titles of notes and or keywords in their notes>
+9. Rename Notes <The user should be able to rename the title of their notes after setting it>
+10. Make an account <The user should be able to create an account>
+11. Connect with any external API <Note taking app should be able to connect to any external API>
+12. Sorting Notes <The user should be able to sort their notes by the date they were created or alphabetically>
+13. Login to account <The user should be able to login to their account>
+14. Log out of account <The user should be able to log out of their account>
 
 <using the syntax [](images/ui1.png) add images in a folder called images/ and place sketches of your webpages>
 
 ## Non-functional Requirements
-1. non-functional
-2. non-functional
+1. Compatible on different web browsers.
+2. Hashed Passwords for more secure security.
 
 <each of the 14 requirements will have a use case associated with it>
 ## Use Cases <Add name of who will write (this specific requirement) and implement (in subsequent milestones) the use case below>
