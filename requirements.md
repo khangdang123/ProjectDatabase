@@ -50,3 +50,19 @@ describe multiple issues that may arise and their outcomes>
 2. Ut enim ad minim veniam, quis nostrum e
 3. ...
 
+#12 Use Case <Jordan Nguyen>
+1. Use Case Name: Sorting Notes
+- **Pre-condition:** <The user has logged in>
+- **Trigger:** <User selects the "filter" option>
+- **Primary Sequence:**
+1. The system prompts a menu for the user to select if they want to sort alphabetically or by the date that it was created.
+2. The user selects which one of the sorting options based on what they want.
+3. The system reorganizes the list of notes according to which option the user selected and shows the updated list to the user.
+4. The user can now view and pick their notes in the newly sorted order.
+- **Primary Postconditions:** <The user's notes are sorted the way they want it and they can now view the notes in the newly sorted list>
+- **Alternate Sequence:** 
+1. The user selected a sorting option that cannot be done.
+   -The system displays an error message to the user
+   -The system prompts the user to create a note before using the sorting options.
+
+
