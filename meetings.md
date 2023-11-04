@@ -17,8 +17,8 @@ help.>
 for that requirement.>
 - Summarize group progress
 
-### 2023-10-08 at 13:30
-<meeting template would go here>
+### 2023-11-03 at 12:00
+- All members in the Group
 <only fill in template once you had the meeting>
 <see example on the last date>
 <use date format YYYY-MM-DD at HH:MM>
