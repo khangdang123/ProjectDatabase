@@ -1,5 +1,3 @@
-## <remove all of the example text and notes in < > such as this one>
-
 ## Functional Requirements
 1. Create Notes <The user should be able to create a new empty note>
 2. Edit Content of notes <The user should be able to edit the content of the notes that they created>
