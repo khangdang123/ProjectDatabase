@@ -51,7 +51,7 @@ describe multiple issues that may arise and their outcomes>
 3. ...
    
 #9 Use Case (Khang Dang)
-- Use Case Name: Rename Notes
+- **Use Case Name:** Rename Notes
 - **Summary:** The user should be able to rename the title of their notes after setting it
 - **Pre-condition:** The user has logged in to their account on the note-taking application and has named the title to their notes.
 - **Trigger:** The user clicks on the “Rename” option.
@@ -68,7 +68,7 @@ describe multiple issues that may arise and their outcomes>
    2. If the user enters a new title that duplicates the existing title of their notes, the system will display a message stating "Cannot use the same title" and prompt the user         to try again.
  
 #10 Use Case (Khang Dang)
-- Use Case Name: Make an Acoount
+- **Use Case Name:** Make an Acoount
 - **Summary:** The user should be able to create an account.
 - **Pre-condition:** User has accessed the note-taking application.
 - **Trigger:** The user clicks on the “Create Account” option.
@@ -86,7 +86,7 @@ describe multiple issues that may arise and their outcomes>
    2. If the system detects that the Email Address duplicates with the existing account, the system will prompt the message “The Email Address has been used” and request the user       try again. 
 
 #11 Use Case (Khang Dang)
-- Use Case Name: Connect with any external API
+- **Use Case Name:** Connect with any external API
 - **Summary:** The user should be able to connect their note-taking application to any external APIs.
 - **Pre-condition:** User has successfully logged in and accessed the note-taking application. 
 - **Trigger:** The user clicks on the “Connect External API” option.
