@@ -49,7 +49,25 @@ describe multiple issues that may arise and their outcomes>
 1. Ut enim ad minim veniam, quis nostrum e
 2. Ut enim ad minim veniam, quis nostrum e
 3. ...
+   
+#9 Use Case (Khang Dang)
+1. Use Case Name: Rename Notes
+- **Summary:** The user should be able to rename the title of their notes after setting it
+- **Pre-condition:** The user has logged in to their account on the note-taking application and has named the title to their notes.
+- **Trigger:** The user clicks on the “Rename” option.
+- **Primary Sequence:**
+   1. The user successfully logged into their account of note-taking application.
+   2. The user clicks on the note that the user expects to rename it.
+   3. The user clicks on the button “Rename” in the note and the system prompts them the display window.
+   4. The display window prompts the text input, allowing the user to input the expected name for renaming.
+   5. The user clicks the “Save” button in the display window after renaming for saving.
+   6. The note-taking application displays a confirmation message for confirming the user has successfully updated the title.
+- **Primary Postconditions:** The system will reflect the new name provided by the user after displaying a confirmation message successfully.
+- **Alternate Sequence:**
+   1. If the user types a new title that exceeds the permitted characters, the system will display a message indicating “Exceeds characters”.
+   2. If the user enters a new title that duplicates the existing title of their notes, the system will display a message stating "Cannot use the same title" and prompt the user         to try again.
 
+  
 #12 Use Case <Jordan Nguyen>
 1. Use Case Name: Sorting Notes
 - **Pre-condition:** <The user has logged in>
