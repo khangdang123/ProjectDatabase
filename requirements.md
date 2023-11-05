@@ -99,7 +99,7 @@ describe multiple issues that may arise and their outcomes>
 - **Primary Postconditions:** The system is capable of connecting multiple external API endpoints within the note.
 - **Alternate Sequence:** If the user enters a URL that the external API endpoints cannot retrieve resources from, the system will generate an error message for the user.
 
-#12 Use Case (Jordan Nguyen)
+#12 Use Case (Jordan Nguyen) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui12.jpg)
 1. Use Case Name: Sorting Notes
 - **Pre-condition:** The user has logged in
 - **Trigger:** User selects the "filter" option
@@ -114,7 +114,7 @@ describe multiple issues that may arise and their outcomes>
       -The system displays an error message to the user
       -The system prompts the user to create a note before using the sorting options.
    
-#13 Use Case (Jordan Nguyen)
+#13 Use Case (Jordan Nguyen) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui13.jpg)
 1. Use Case Name: Login to Account
 - **Pre-condition:** The user has opened up the note-taker on their web browser
 - **Trigger:** User selects the "Login" option
@@ -130,7 +130,7 @@ describe multiple issues that may arise and their outcomes>
       -The system displays an error message to the user
       -The system prompts the user to enter their credentials again or press forgot password if they don't remember.
    
-#14 Use Case (Jordan Nguyen)
+#14 Use Case (Jordan Nguyen) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui14.jpg)
 1. Use Case Name: Log out of account
 - **Pre-condition:** The user has logged in to their account on the note-taking service on their browser
 - **Trigger:** User selects the "Log out" option
