@@ -98,7 +98,7 @@ describe multiple issues that may arise and their outcomes>
    7. The system displays the retrieved information that the user provided URL in a specific external API.
 - **Primary Postconditions:** The system is capable of connecting multiple external API endpoints within the note.
 - **Alternate Sequence:** If the user enters a URL that the external API endpoints cannot retrieve resources from, the system will generate an error message for the user.
-  
+
 #12 Use Case (Jordan Nguyen)
 1. Use Case Name: Sorting Notes
 - **Pre-condition:** The user has logged in
@@ -113,5 +113,39 @@ describe multiple issues that may arise and their outcomes>
    1. The user selected a sorting option that cannot be done.
       -The system displays an error message to the user
       -The system prompts the user to create a note before using the sorting options.
+   
+#13 Use Case (Jordan Nguyen)
+1. Use Case Name: Login to Account
+- **Pre-condition:** The user has opened up the note-taker on their web browser
+- **Trigger:** User selects the "Login" option
+- **Primary Sequence:**
+   1. The website prompts the user to enter their username and password.
+   2. The user enters in their username and password
+   3. The user presses the login button which sends the request to the server.
+   4. The server checks the credentials with the user's stored data to see if they match.
+   5. Upon successful authentication, the website brings the user to the dashboard or their list of notes.
+- **Primary Postconditions:** <The user is logged in to their account, and they have access to their list of notes, settings, and any other features within the website.>
+- **Alternate Sequence:** 
+   1. The user enters incorrect credentials
+      -The system displays an error message to the user
+      -The system prompts the user to enter their credentials again or press forgot password if they don't remember.
+   
+#14 Use Case (Jordan Nguyen)
+1. Use Case Name: Log out of account
+- **Pre-condition:** The user has logged in to their account on the note-taking service on their browser
+- **Trigger:** User selects the "Log out" option
+- **Primary Sequence:**
+   1. The system prompts the user with a menu to confirm that they want to log out.
+   2. The user selects the log out button to confirm that they want to log out.
+   3. The website logs the user out and revokes their access to the account and its features.
+   4. The app returns to the welcome screen, where the user can either log in with a different account or exit the website.
+- **Primary Postconditions:** <The user is successfully logged out of their account, and the website no longer grants them access to their notes or account features.>
+- **Alternate Sequence:** 
+   1. The internet connection is not stable
+      -The system displays an error message to the user
+      -The system prompts that their internet connection is unstable and they need to retry logging out.
+
+
+
    
 
