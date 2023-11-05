@@ -73,7 +73,7 @@ describe multiple issues that may arise and their outcomes>
 - **Primary Sequence:**
    1. The user accessed the note-taking application.
    2. The user selects a “Create Account” button in an interface of the note-taking application.
-   3. The system displays a message prompting a form of requesting some basic information of the user, including Email Address, Username, and Password. 
+   3. The system displays a message prompting a form of requesting some basic information of the user, including Name,Email Address, Username, and Password. 
    4. The user has filled all the required fields, the user clicks the “Register” button to submit his information.
    5. The system checks the validity of all required fields of the form.
    6. If all required fields are valid, the system proceeds to create an account.
