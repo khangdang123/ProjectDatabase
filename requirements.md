@@ -65,7 +65,7 @@ describe multiple issues that may arise and their outcomes>
    1. If the user types a new title that exceeds the permitted characters, the system will display a message indicating “Exceeds characters”.
    2. If the user enters a new title that duplicates the existing title of their notes, the system will display a message stating "Cannot use the same title" and prompt the user         to try again.
  
-#10 Use Case (Khang Dang) [images](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui10.png)
+#10 Use Case (Khang Dang) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui10.png)
 - **Use Case Name:** Make an Acoount
 - **Summary:** The user should be able to create an account.
 - **Pre-condition:** User has accessed the note-taking application.
