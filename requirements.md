@@ -48,7 +48,7 @@ describe multiple issues that may arise and their outcomes>
 2. Ut enim ad minim veniam, quis nostrum e
 3. ...
    
-#9 Use Case (Khang Dang)
+#9 Use Case (Khang Dang) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui9.png)
 - **Use Case Name:** Rename Notes
 - **Summary:** The user should be able to rename the title of their notes after setting it
 - **Pre-condition:** The user has logged in to their account on the note-taking application and has named the title to their notes.
@@ -83,7 +83,7 @@ describe multiple issues that may arise and their outcomes>
    1. If one of the required fields has not been filled in the form, the system will prompt the message “Invalid” and request the user try again.
    2. If the system detects that the Email Address duplicates with the existing account, the system will prompt the message “The Email Address has been used” and request the user       try again. 
 
-#11 Use Case (Khang Dang)
+#11 Use Case (Khang Dang) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui11.png)
 - **Use Case Name:** Connect with any external API
 - **Summary:** The user should be able to connect their note-taking application to any external APIs.
 - **Pre-condition:** User has successfully logged in and accessed the note-taking application. 
