@@ -51,9 +51,9 @@ describe multiple issues that may arise and their outcomes>
 
 #1 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Create Notes
-   **Pre-condition:** User is logged into the note-taking application.
-   **Trigger:** User selects the "Create Notes" option in the application menu.
-   **Primary Sequence:**
+   - **Pre-condition:** User is logged into the note-taking application.
+   - **Trigger:** User selects the "Create Notes" option in the application menu.
+   - **Primary Sequence:**
       1. User clicks on the "Create Notes" option.
       2. Application opens a new blank note editor.
       3. User enters the content for the note.
@@ -61,16 +61,16 @@ describe multiple issues that may arise and their outcomes>
       5. User clicks on the "Save" button.
       6. Application saves the note with a unique identifier.
       7. Application displays a confirmation message indicating the note has been created successfully.
-   **Primary Postconditions:** Note is successfully created and saved in the user's account.
-   **Alternate Sequence:**
+   - **Primary Postconditions:** Note is successfully created and saved in the user's account.
+   - **Alternate Sequence:**
       Step 3a: User attaches files or images to the note.
       Step 5a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
 
 #2 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Edit Content of Notes
-   **Pre-condition:** User is logged into the note-taking application and has an existing note.
-   **Trigger:** User selects the desired note and clicks on the "Edit" option.
-   **Primary Sequence:**
+   - **Pre-condition:** User is logged into the note-taking application and has an existing note.
+   - **Trigger:** User selects the desired note and clicks on the "Edit" option.
+   - **Primary Sequence:**
       1. User selects the note to edit.
       2. User clicks on the "Edit" option.
       3. Application opens the note in edit mode, displaying existing content.
@@ -79,31 +79,31 @@ describe multiple issues that may arise and their outcomes>
       6. User clicks on the "Save" button.
       7. Application saves the edited note.
       8. Application displays a confirmation message indicating the note has been updated successfully.
-   **Primary Postconditions:** Note is successfully edited and saved with the changes made by the user.
-   **Alternate Sequence:**
+   - **Primary Postconditions:** Note is successfully edited and saved with the changes made by the user.
+   - **Alternate Sequence:**
       Step 4a: User deletes existing content and adds new content.
       Step 6a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
 
 #3 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Delete Notes
-   **Pre-condition:** User is logged into the note-taking application and has one or more existing notes.
-   **Trigger:** User selects the desired note and clicks on the "Delete" option.
-   **Primary Sequence:**
+   - **Pre-condition:** User is logged into the note-taking application and has one or more existing notes.
+   - **Trigger:** User selects the desired note and clicks on the "Delete" option.
+   - **Primary Sequence:**
       1. User selects the note to delete.
       2. User clicks on the "Delete" option.
       3. Application displays a confirmation dialog asking the user to confirm the deletion.
       4. User confirms the deletion.
       5. Application removes the note from the user's account.
       6. Application displays a confirmation message indicating the note has been deleted successfully.
-   **Primary Postconditions:** Selected note is permanently deleted from the user's account.
-   **Alternate Sequence:**
+   - **Primary Postconditions:** Selected note is permanently deleted from the user's account.
+   - **Alternate Sequence:**
       Step 3a: User cancels the deletion, and the application returns to the note view without deleting the note.
 
 #4 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Share Notes
-   **Pre-condition:** User is logged into the note-taking application and has an existing note.
-   **Trigger:** User selects the desired note and clicks on the "Share" option.
-   **Primary Sequence:**
+   - **Pre-condition:** User is logged into the note-taking application and has an existing note.
+   - **Trigger:** User selects the desired note and clicks on the "Share" option.
+   - **Primary Sequence:**
       1. User selects the note to share.
       2. User clicks on the "Share" option.
       3. Application generates a shareable link or unique identifier for the selected note.
@@ -111,8 +111,8 @@ describe multiple issues that may arise and their outcomes>
       5. User can share the link via email, messaging apps, or social media platforms.
       6. Recipient clicks on the shared link.
       7. Application displays the shared note to the recipient.a
-   **Primary Postconditions:** User successfully shares the selected note with others, and recipients can view the note using the shared link.
-   **Alternate Sequence:**
+   - **Primary Postconditions:** User successfully shares the selected note with others, and recipients can view the note using the shared link.
+   - **Alternate Sequence:**
       Step 3a: User sets specific permissions for the shared note (e.g., read-only access, editing access).
       Step 5a: User shares the note directly with specific users within the application by entering their email addresses.
 
