@@ -63,8 +63,8 @@ describe multiple issues that may arise and their outcomes>
       7. Application displays a confirmation message indicating the note has been created successfully.
    - **Primary Postconditions:** Note is successfully created and saved in the user's account.
    - **Alternate Sequence:**
-      Step 3a: User attaches files or images to the note.
-      Step 5a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
+      1. Step 3a: User attaches files or images to the note.
+      2. Step 5a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
 
 #2 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Edit Content of Notes
@@ -81,8 +81,8 @@ describe multiple issues that may arise and their outcomes>
       8. Application displays a confirmation message indicating the note has been updated successfully.
    - **Primary Postconditions:** Note is successfully edited and saved with the changes made by the user.
    - **Alternate Sequence:**
-      Step 4a: User deletes existing content and adds new content.
-      Step 6a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
+      1. Step 4a: User deletes existing content and adds new content.
+      2. Step 6a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
 
 #3 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Delete Notes
@@ -97,7 +97,7 @@ describe multiple issues that may arise and their outcomes>
       6. Application displays a confirmation message indicating the note has been deleted successfully.
    - **Primary Postconditions:** Selected note is permanently deleted from the user's account.
    - **Alternate Sequence:**
-      Step 3a: User cancels the deletion, and the application returns to the note view without deleting the note.
+      1. Step 3a: User cancels the deletion, and the application returns to the note view without deleting the note.
 
 #4 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Share Notes
@@ -113,8 +113,8 @@ describe multiple issues that may arise and their outcomes>
       7. Application displays the shared note to the recipient.a
    - **Primary Postconditions:** User successfully shares the selected note with others, and recipients can view the note using the shared link.
    - **Alternate Sequence:**
-      Step 3a: User sets specific permissions for the shared note (e.g., read-only access, editing access).
-      Step 5a: User shares the note directly with specific users within the application by entering their email addresses.
+      1. Step 3a: User sets specific permissions for the shared note (e.g., read-only access, editing access).
+      2. Step 5a: User shares the note directly with specific users within the application by entering their email addresses.
 
    
 #9 Use Case (Khang Dang) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui9.png)
