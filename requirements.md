@@ -174,8 +174,8 @@
    6. The note-taking application displays a confirmation message for confirming the user has successfully updated the title.
 - **Primary Postconditions:** The system will reflect the new name provided by the user after displaying a confirmation message successfully.
 - **Alternate Sequence:**
-   1. If the user types a new title that exceeds the permitted characters, the system will display a message indicating “Exceeds characters”.
-   2. If the user enters a new title that duplicates the existing title of their notes, the system will display a message stating "Cannot use the same title" and prompt the user         to try again.
+  -   If the user types a new title that exceeds the permitted characters, the system will display a message indicating “Exceeds characters”.
+  -   If the user enters a new title that duplicates the existing title of their notes, the system will display a message stating "Cannot use the same title" and prompt the user         to try again.
  
 #10 Use Case (Khang Dang) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui10.png)
 - **Use Case Name:** Make an Acoount
@@ -192,8 +192,8 @@
    7. The system sends the notification to the user that the account has been successfully created.
 - **Primary Postconditions:** A new user account has been successfully created, granting access to all features of the note-taking application for login and use.
 - **Alternate Sequence:**
-   1. If one of the required fields has not been filled in the form, the system will prompt the message “Invalid” and request the user try again.
-   2. If the system detects that the Email Address duplicates with the existing account, the system will prompt the message “The Email Address has been used” and request the user       try again. 
+  -   If one of the required fields has not been filled in the form, the system will prompt the message “Invalid” and request the user try again.
+  -   If the system detects that the Email Address duplicates with the existing account, the system will prompt the message “The Email Address has been used” and request the user       try again. 
 
 #11 Use Case (Khang Dang) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui11.png)
 - **Use Case Name:** Connect with any external API
@@ -209,10 +209,11 @@
    6. The specific external API endpoint responds back to the system, including the data that the user expected to receive from the endpoint.
    7. The system displays the retrieved information that the user provided URL in a specific external API.
 - **Primary Postconditions:** The system is capable of connecting multiple external API endpoints within the note.
-- **Alternate Sequence:** If the user enters a URL that the external API endpoints cannot retrieve resources from, the system will generate an error message for the user.
+- **Alternate Sequence:**
+   - If the user enters a URL that the external API endpoints cannot retrieve resources from, the system will generate an error message for the user.
 
 #12 Use Case (Jordan Nguyen) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui12.jpg)
-1. Use Case Name: Sorting Notes
+- **Use Case Name:** Sorting Notes
 - **Pre-condition:** The user has logged in
 - **Trigger:** User selects the "filter" option
 - **Primary Sequence:**
@@ -223,8 +224,8 @@
 - **Primary Postconditions:** <The user's notes are sorted the way they want it and they can now view the notes in the newly sorted list>
 - **Alternate Sequence:** 
    1. The user selected a sorting option that cannot be done.
-      -The system displays an error message to the user
-      -The system prompts the user to create a note before using the sorting options.
+      - The system displays an error message to the user
+      - The system prompts the user to create a note before using the sorting options.
    
 #13 Use Case (Jordan Nguyen) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui13.jpg)
 1. Use Case Name: Login to Account
@@ -239,11 +240,11 @@
 - **Primary Postconditions:** <The user is logged in to their account, and they have access to their list of notes, settings, and any other features within the website.>
 - **Alternate Sequence:** 
    1. The user enters incorrect credentials
-      -The system displays an error message to the user
-      -The system prompts the user to enter their credentials again or press forgot password if they don't remember.
+      - The system displays an error message to the user
+      - The system prompts the user to enter their credentials again or press forgot password if they don't remember.
    
 #14 Use Case (Jordan Nguyen) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui14.jpg)
-1. Use Case Name: Log out of account
+- **Use Case Name:** Log out of account
 - **Pre-condition:** The user has logged in to their account on the note-taking service on their browser
 - **Trigger:** User selects the "Log out" option
 - **Primary Sequence:**
@@ -254,5 +255,5 @@
 - **Primary Postconditions:** <The user is successfully logged out of their account, and the website no longer grants them access to their notes or account features.>
 - **Alternate Sequence:** 
    1. The internet connection is not stable
-      -The system displays an error message to the user
-      -The system prompts that their internet connection is unstable and they need to retry logging out.
+      - The system displays an error message to the user
+      - The system prompts that their internet connection is unstable and they need to retry logging out.
