@@ -14,43 +14,14 @@
 13. Login to account <The user should be able to login to their account>
 14. Log out of account <The user should be able to log out of their account>
 
-<using the syntax [](images/ui1.png) add images in a folder called images/ and place sketches of your webpages>
-
 ## Non-functional Requirements
 1. Compatible on different web browsers.
 2. Hashed Passwords for more secure security.
 
-<each of the 14 requirements will have a use case associated with it>
 ## Use Cases <Add name of who will write (this specific requirement) and implement (in subsequent milestones) the use case below>
-1. Use Case Name (Should match functional requirement name)
-- **Pre-condition:** <can be a list or short description>
-- **Trigger:** <can be a list or short description>
-- **Primary Sequence:**
-1. Ut enim ad minim veniam, quis nostrum e
-2. Et sequi incidunt
-3. Quis aute iure reprehenderit
-4. ...
-5. ...
-6. ...
-7. ...
-8. ...
-9. ...
-10. <Try to stick to a max of 12 steps>
-- **Primary Postconditions:** <can be a list or short description>
-- **Alternate Sequence:** <you can have more than one alternate sequence to
-describe multiple issues that may arise and their outcomes>
-1. Ut enim ad minim veniam, quis nostrum e
-2. Ut enim ad minim veniam, quis nostrum e
-3. ...
-- **Alternate Sequence <optional>:** <you can have more than one alternate sequence to describe multiple issues that may arise>
-
-1. Ut enim ad minim veniam, quis nostrum e
-2. Ut enim ad minim veniam, quis nostrum e
-3. ...
-
 
 #1 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui1.png)
-   1. Use Case Name: Create Notes
+   - **Use Case Name:** Create Notes
    - **Pre-condition:** User is logged into the note-taking application.
    - **Trigger:** User selects the "Create Notes" option in the application menu.
    - **Primary Sequence:**
@@ -63,11 +34,11 @@ describe multiple issues that may arise and their outcomes>
       7. Application displays a confirmation message indicating the note has been created successfully.
    - **Primary Postconditions:** Note is successfully created and saved in the user's account.
    - **Alternate Sequence:**
-      1. Step 3a: User attaches files or images to the note.
-      2. Step 5a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
+     -   Step 3a: User attaches files or images to the note.
+     -   Step 5a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
 
 #2 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui2.png)
-   1. Use Case Name: Edit Content of Notes
+   - **Use Case Name:** Edit Content of Notes
    - **Pre-condition:** User is logged into the note-taking application and has an existing note.
    - **Trigger:** User selects the desired note and clicks on the "Edit" option.
    - **Primary Sequence:**
@@ -81,11 +52,11 @@ describe multiple issues that may arise and their outcomes>
       8. Application displays a confirmation message indicating the note has been updated successfully.
    - **Primary Postconditions:** Note is successfully edited and saved with the changes made by the user.
    - **Alternate Sequence:**
-      1. Step 4a: User deletes existing content and adds new content.
-      2. Step 6a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
+      -   Step 4a: User deletes existing content and adds new content.
+      -   Step 6a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
 
 #3 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui3.png)
-   1. Use Case Name: Delete Notes
+   - **Use Case Name:** Delete Notes
    - **Pre-condition:** User is logged into the note-taking application and has one or more existing notes.
    - **Trigger:** User selects the desired note and clicks on the "Delete" option.
    - **Primary Sequence:**
@@ -97,10 +68,10 @@ describe multiple issues that may arise and their outcomes>
       6. Application displays a confirmation message indicating the note has been deleted successfully.
    - **Primary Postconditions:** Selected note is permanently deleted from the user's account.
    - **Alternate Sequence:**
-      1. Step 3a: User cancels the deletion, and the application returns to the note view without deleting the note.
+     -   Step 3a: User cancels the deletion, and the application returns to the note view without deleting the note.
 
 #4 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui4.png)
-   1. Use Case Name: Share Notes
+   - **Use Case Name:** Share Notes
    - **Pre-condition:** User is logged into the note-taking application and has an existing note.
    - **Trigger:** User selects the desired note and clicks on the "Share" option.
    - **Primary Sequence:**
@@ -113,14 +84,14 @@ describe multiple issues that may arise and their outcomes>
       7. Application displays the shared note to the recipient.a
    - **Primary Postconditions:** User successfully shares the selected note with others, and recipients can view the note using the shared link.
    - **Alternate Sequence:**
-      1. Step 3a: User sets specific permissions for the shared note (e.g., read-only access, editing access).
-      2. Step 5a: User shares the note directly with specific users within the application by entering their email addresses.
+     -   Step 3a: User sets specific permissions for the shared note (e.g., read-only access, editing access).
+     -   Step 5a: User shares the note directly with specific users within the application by entering their email addresses.
 
-#5 Use Case (Jonathan) [Sktech]()
-   1. **Use Case Name:** Save as Draft
+#5 Use Case (Jonathan) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui5.JPG)
+   - **Use Case Name:** Save as Draft
    - **Summary:** The user should be able to save a draft a note for further editing without publishing/sharing said notes woth a title for reference 
    - **Pre-Conditions:** The user should have a saved note, created an account and be in the create note or edit note section.
-   - **Trigger:** User presses a button near the top corner that is marked as "Save as Draft"
+   - **Trigger:** User presses a button near the top corner that is marked as "Save as Draft".
    - **Primary Sequence:**
      1. User clicks create notes.
      2. Application opens a blank note editor.
@@ -131,14 +102,14 @@ describe multiple issues that may arise and their outcomes>
      7. Application saves the note with a unique identifier.
      8. Application displays a confirmation message indicating the note has been saved correctly.
    - **Primary Postcondition:** Note is saved under a seperate section of the account titled as "Drafts", this section is by default only viewable by the user.
-   -  **Alternate Sequence:**
-     1.  step 3a: User attaches files or images to the note (optional).
-     2.  Step 4a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
+   - **Alternate Sequence:**
+     -   Step 3a: User attaches files or images to the note (optional).
+     -   Step 4a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
 
-#6 Use Case (Jonathan) [sketch]()
-   1.**Use Case Name:** Add Comments
+#6 Use Case (Jonathan) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui6.JPG)
+   - **Use Case Name:** Add Comments
    - **Summary:** User should be able to add comments on their own notes for reference that show up on the side of their document
-   - * *Pre-Conditions:** The user should have a saved note, created an account and be in the edit note section.
+   - **Pre-Conditions:** The user should have a saved note, created an account and be in the edit note section.
    - **Trigger:** User is viewing the saved note and clicks the comment section
    - **Primary Sequence:**
      1. User opens a previously saved note.
@@ -150,10 +121,10 @@ describe multiple issues that may arise and their outcomes>
      7. Aplication saves the comment on the side of the note with a highlight of the commented section
    - **Primary Postcondition:** Comment is saved on document with a highlight over the commented section.
    -  **Alternate Sequence:**
-     1.  step 6a: User presses the x button and the note is deleted.
+     -   Step 6a: User presses the x button and the note is deleted.
 
-#7 Use Case (Jonathan) [sketch]()
-   1.**Use Case Name:** Add Attachments
+#7 Use Case (Jonathan) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui7.JPG)
+   - **Use Case Name:** Add Attachments
    - **Summary:** The user should have a saved note, created an account and be in the view/edit note section/
    - **Pre-Conditions:** The user should have a saved note before this action can be completed. 
    - **Trigger:** User is viewing the saved note and clicks the add attachment button
@@ -167,14 +138,14 @@ describe multiple issues that may arise and their outcomes>
      8. User clicks ok.
      9. Aplication saves the attachment to the note.
    - **Primary Postcondition:** Attachment is saved on document on the very bottom of the note and can be downloaded by other users if shared.
-   -  **Alternate Sequence:**
-     1.  step 6a: User presses the x button and the attachment is not added to the note.
+   - **Alternate Sequence:**
+     -   Step 6a: User presses the x button and the attachment is not added to the note.
  
-#8 Use Case (Jonathan) [sketch]()
-   1.**Use Case Name:** Advanced Search
+#8 Use Case (Jonathan) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui8.JPG)
+   - **Use Case Name:** Advanced Search
    - **Summary:** User should be able to search their saved/ drafted notes by the title inputted to the note.
    - **Pre-Conditions:** The user should have a saved note, created an account and not in the create, edit or open note section
-   - **Trigger:** User is viewing the saved note and clicks the add attachment button
+   - **Trigger:** User is viewing the saved note and clicks the add 'Search' button.
    - **Primary Sequence:**
      1. User is in their profile.
      2. User clicks the search toolbar on the top right corner.
@@ -185,9 +156,9 @@ describe multiple issues that may arise and their outcomes>
      7. Application showcases a seperate section for regular saved notes and draft notes within the parameters.
      8. User is able to click the relevant note they were searching for to open the note.
    - **Primary Postcondition:** Relevant files for the search term is presented to the user and able to be access from the advanced search method.
-   -  **Alternate Sequence:**
-     1.  step 5a. The user clicks the X button to delete the previously inputted text.
-     2.  step 8a. User does not find the search terms they are looking for and click the X button to go back to profile.
+   - **Alternate Sequence:**
+     -   Step 5a. The user clicks the X button to delete the previously inputted text.
+     -   Step 8a. User does not find the search terms they are looking for and click the X button to go back to profile.
 
 #9 Use Case (Khang Dang) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui9.png)
 - **Use Case Name:** Rename Notes
@@ -285,8 +256,3 @@ describe multiple issues that may arise and their outcomes>
    1. The internet connection is not stable
       -The system displays an error message to the user
       -The system prompts that their internet connection is unstable and they need to retry logging out.
-
-
-
-   
-
