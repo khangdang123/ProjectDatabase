@@ -116,7 +116,79 @@ describe multiple issues that may arise and their outcomes>
       1. Step 3a: User sets specific permissions for the shared note (e.g., read-only access, editing access).
       2. Step 5a: User shares the note directly with specific users within the application by entering their email addresses.
 
-   
+#5 Use Case (Jonathan) [Sktech]()
+-**Use Case Name:** Save as Draft
+- **Summary:** The user should be able to save a draft a note for further editing without publishing/sharing said notes woth a title for reference 
+- **Pre-Conditions:** The user should have a saved note, created an account and be in the create note or edit note section.
+- **Trigger:** User presses a button near the top corner that is marked as "Save as Draft"
+- **Primary Sequence:**
+     1. User clicks create notes.
+     2. Application opens a blank note editor.
+     3. User can format the content (optional).
+     4. User clicks on the "Save as draft button" button.
+     5. Application asks for a name for the draft
+     6. User inputs a name in the application and clicks "ok"
+     7. Application saves the note with a unique identifier.
+     8. Application displays a confirmation message indicating the note has been saved correctly.
+- **Primary Postcondition:** Note is saved under a seperate section of the account titled as "Drafts", this section is by default only viewable by the user.
+-  **Alternate Sequence:**
+     1.  step 3a: User attaches files or images to the note (optional).
+     2.  Step 4a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
+
+#6 Use Case (Jonathan) [sketch]()
+-**Use Case Name:** Add Comments
+- **Summary:** User should be able to add comments on their own notes for reference that show up on the side of their document
+- **Pre-Conditions:** The user should have a saved note, created an account and be in the edit note section.
+- **Trigger:** User is viewing the saved note and clicks the comment section
+- **Primary Sequence:**
+     1. User opens a previously saved note.
+     2. Application opens the old note.
+     3. User presses the comment button on the toolbar
+     4. User is able to highlight a section of the note to comment on
+     5. Application asks for user input on what to comment on the note
+     6. User puts in a text comment and presses ok
+     7. Aplication saves the comment on the side of the note with a highlight of the commented section
+- **Primary Postcondition:** Comment is saved on document with a highlight over the commented section.
+-  **Alternate Sequence:**
+     1.  step 6a: User presses the x button and the note is deleted.
+
+#7 Use Case (Jonathan) [sketch]()
+-**Use Case Name:** Add Attachments
+- **Summary:** The user should have a saved note, created an account and be in the view/edit note section/
+- **Pre-Conditions:** The user should have a saved note before this action can be completed. 
+- **Trigger:** User is viewing the saved note and clicks the add attachment button
+- **Primary Sequence:**
+     1. User opens a previously saved note.
+     2. Application opens the saved note.
+     3. User presses the add attachment button on the toolbar.
+     4. Application pops up a prompt for what attachment to add.
+     5. User chooses an attachment from their machine to add to the note.
+     6. Application asks for confirmation if this attachment is to be attached.
+     8. User clicks ok.
+     9. Aplication saves the attachment to the note.
+- **Primary Postcondition:** Attachment is saved on document on the very bottom of the note and can be downloaded by other users if shared.
+-  **Alternate Sequence:**
+     1.  step 6a: User presses the x button and the attachment is not added to the note.
+ 
+#8 Use Case (Jonathan) [sketch]()
+-**Use Case Name:** Advanced Search
+- **Summary:** User should be able to search their saved/ drafted notes by the title inputted to the note.
+- **Pre-Conditions:** The user should have a saved note, created an account and not in the create, edit or open note section
+- **Trigger:** User is viewing the saved note and clicks the add attachment button
+- **Primary Sequence:**
+     1. User is in their profile.
+     2. User clicks the search toolbar on the top right corner.
+     3. Application expands search text input section.
+     4. User searches by the title they want to look for.
+     5. User clicks the enter key to send the search in.
+     6. Application searches for all notes with or with part of the name typed in.
+     7. Application showcases a seperate section for regular saved notes and draft notes within the parameters.
+     8. User is able to click the relevant note they were searching for to open the note.
+- **Primary Postcondition:** Relevant files for the search term is presented to the user and able to be access from the advanced search method.
+-  **Alternate Sequence:**
+     1.  step 5a. The user clicks the X button to delete the previously inputted text.
+     2.  step 8a. User does not find the search terms they are looking for and click the X button to go back to profile.
+
 #9 Use Case (Khang Dang) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui9.png)
 - **Use Case Name:** Rename Notes
 - **Summary:** The user should be able to rename the title of their notes after setting it
