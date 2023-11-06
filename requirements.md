@@ -18,7 +18,7 @@
 1. Compatible on different web browsers.
 2. Hashed Passwords for more secure security.
 
-## Use Cases <Add name of who will write (this specific requirement) and implement (in subsequent milestones) the use case below>
+## Use Cases 
 
 #1 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui1.png)
    - **Use Case Name:** Create Notes
