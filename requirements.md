@@ -228,7 +228,7 @@
       - The system prompts the user to create a note before using the sorting options.
    
 #13 Use Case (Jordan Nguyen) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui13.jpg)
-1. Use Case Name: Login to Account
+- **Use Case Name:** Login to Account
 - **Pre-condition:** The user has opened up the note-taker on their web browser
 - **Trigger:** User selects the "Login" option
 - **Primary Sequence:**
