@@ -1,29 +1,9 @@
-## Instructions
-- Delete this block before adding to your repository.
-- Delete any instructions you see below they will be within < >
-- This schedule should reflect the meetings from the start of the project until the end of the semester.
-- Write at least 1 meeting per week until the end of the semester
-
 ## Meetings
-### 2023-10-01 at 10:30
-- Who attended the meeting
-- Team updates (15min or less)
-<Each team member gives an update of what they did from the last meeting and what
-they plan to do next. If they are stuck, bring it up here to see if others can
-help.>
-- <name> worked on X. Will work on Y next.
-- pair-programming (optional) (25 mins)
-<- Pair program on one part of the project. Driver will be the person responsible
-for that requirement.>
-- Summarize group progress
 
 ### 2023-11-03 at 12:00
 - All members in the Group
-<only fill in template once you had the meeting>
-<see example on the last date>
-<use date format YYYY-MM-DD at HH:MM>
+- Working on and Discussing making 14 functional requirements for the Note-taking application. After finishing 14 functional requirements, each member will choose 3-4 functional requirements to create corresponding use cases for each functional requirements.
+- Andy working on functional requirements 1 through 4, Jonathan 5 through 8, Khang 9 through 11, and Jordan 12 through 14 in the list of functional requirements of note-taking application.
+- Everyone will responsible for writing a use case for their functional requirements, and it should be done on Sunday(05/11/2023). 
 
-### 2023-10-15 at 10:30
-<meeting template would go here>
-<only fill in template once you had the meeting>
 
