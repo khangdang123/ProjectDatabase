@@ -22,6 +22,7 @@
 
 #1 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui1.png)
    - **Use Case Name:** Create Notes
+   - **Summary:** The user should be able to create a new empty note.
    - **Pre-condition:** User is logged into the note-taking application.
    - **Trigger:** User selects the "Create Notes" option in the application menu.
    - **Primary Sequence:**
@@ -39,6 +40,7 @@
 
 #2 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui2.png)
    - **Use Case Name:** Edit Content of Notes
+   - **Summary:** The user should be able to edit the content of the notes that they created
    - **Pre-condition:** User is logged into the note-taking application and has an existing note.
    - **Trigger:** User selects the desired note and clicks on the "Edit" option.
    - **Primary Sequence:**
@@ -57,6 +59,7 @@
 
 #3 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui3.png)
    - **Use Case Name:** Delete Notes
+   - **Summary:** The user should be able to delete any notes that they created
    - **Pre-condition:** User is logged into the note-taking application and has one or more existing notes.
    - **Trigger:** User selects the desired note and clicks on the "Delete" option.
    - **Primary Sequence:**
@@ -72,6 +75,7 @@
 
 #4 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui4.png)
    - **Use Case Name:** Share Notes
+   - **Summary:** The user should be able to share their notes by creating a link or a download file
    - **Pre-condition:** User is logged into the note-taking application and has an existing note.
    - **Trigger:** User selects the desired note and clicks on the "Share" option.
    - **Primary Sequence:**
@@ -214,6 +218,7 @@
 
 #12 Use Case (Jordan Nguyen) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui12.jpg)
 - **Use Case Name:** Sorting Notes
+- **Summary:** The user should be able to sort their notes by the date they were created or alphabetically
 - **Pre-condition:** The user has logged in
 - **Trigger:** User selects the "filter" option
 - **Primary Sequence:**
@@ -229,6 +234,7 @@
    
 #13 Use Case (Jordan Nguyen) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui13.jpg)
 - **Use Case Name:** Login to Account
+- **Summary:** The user should be able to login to their account
 - **Pre-condition:** The user has opened up the note-taker on their web browser
 - **Trigger:** User selects the "Login" option
 - **Primary Sequence:**
@@ -245,6 +251,7 @@
    
 #14 Use Case (Jordan Nguyen) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui14.jpg)
 - **Use Case Name:** Log out of account
+- **Summary:** The user should be able to log out of their account
 - **Pre-condition:** The user has logged in to their account on the note-taking service on their browser
 - **Trigger:** User selects the "Log out" option
 - **Primary Sequence:**
