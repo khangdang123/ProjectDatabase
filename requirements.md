@@ -49,7 +49,7 @@ describe multiple issues that may arise and their outcomes>
 3. ...
 
 
-1. Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
+#1 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Create Notes
    **Pre-condition:** User is logged into the note-taking application.
    **Trigger:** User selects the "Create Notes" option in the application menu.
@@ -66,7 +66,7 @@ describe multiple issues that may arise and their outcomes>
       Step 3a: User attaches files or images to the note.
       Step 5a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
 
-2. Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
+#2 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Edit Content of Notes
    **Pre-condition:** User is logged into the note-taking application and has an existing note.
    **Trigger:** User selects the desired note and clicks on the "Edit" option.
@@ -84,7 +84,7 @@ describe multiple issues that may arise and their outcomes>
       Step 4a: User deletes existing content and adds new content.
       Step 6a: If the user chooses not to save, the application prompts for confirmation before closing the note editor.
 
-3. Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
+#3 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Delete Notes
    **Pre-condition:** User is logged into the note-taking application and has one or more existing notes.
    **Trigger:** User selects the desired note and clicks on the "Delete" option.
@@ -99,7 +99,7 @@ describe multiple issues that may arise and their outcomes>
    **Alternate Sequence:**
       Step 3a: User cancels the deletion, and the application returns to the note view without deleting the note.
 
-4. Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
+#4 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/)
    1. Use Case Name: Share Notes
    **Pre-condition:** User is logged into the note-taking application and has an existing note.
    **Trigger:** User selects the desired note and clicks on the "Share" option.
