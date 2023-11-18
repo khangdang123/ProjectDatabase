@@ -2,30 +2,30 @@
 
 # Functionality
 List of the following features that implemented in Note App:
-1) 1
-2) 2
-3) 3
-4) 4
-5) 5
-6) 6
-7) 7
-8) 8
-9) 9
+1) Create Notes
+2) Edit Content of Notes
+3) Delete Notes
+4) Save as drafts
+5) Add comments 
+6) Rename Notes
+7) Make an account 
+8) Log in to account
+9) Log out to account
 
 # Installation
 
 # How to Use
 
 # Usage
-1) s
-2) 2
-3) 3
-4) 4
-5) 5
-6) 6
-7) 7
-8) 8
-9) 9
+1) Create Notes
+2) Edit Content of Notes
+3) Delete Notes
+4) Save as drafts
+5) Add comments 
+6) Rename Notes
+7) Make an account 
+8) Log in to account
+9) Log out to account
 
 # Team Member
 - Khang Dang (@khangdang123)
