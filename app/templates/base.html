@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+        <head>
+                {% if title %}
+                <title>{{ title }} - NoteApp</title>
+                {% else %}
+                <title>Welcome to NoteApp</title>
+                {% endif %}
+        <head>
+        <body>
+           <div>
+            Note Application:
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/logout">LogOut</a>
+        </div>
