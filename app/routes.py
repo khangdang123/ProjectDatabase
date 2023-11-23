@@ -1,10 +1,13 @@
 from app import app
 from flask import render_template, flash, redirect, request, url_for
-from app.forms import LoginForm, RegistrationForm
+from app.forms import LoginForm, RegistrationForm, CreateNote
 from flask_login import current_user, login_user, logout_user
-from app.models import User
+from app.models import User, Note
 from werkzeug.urls import url_parse
 from app import db
+import json
+
+notes = []
 
 @app.route('/')
 def home():
@@ -42,3 +45,50 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+ @app.route('/index')
+ def index():
+    db.create_all()
+    notes = Note.query.all()
+    load_notes()
+    return render_template('index.html',notes=notes)
+
+@app.route('/create_note', methods=['GET', 'POST'])
+def create_note():
+    form = CreateNote()
+
+    if form.validate_on_submit():
+        title = form.title.data
+        note_content = form.note.data
+
+        # Assuming you have a Note model defined with title and content fields
+        new_note = Note(title=title, content=note_content)
+
+        db.session.add(new_note)
+        db.session.commit()
+
+        flash('Note created successfully!', 'success')
+        return redirect(url_for('index'))
+
+    return render_template('create.html', title='Create Note', form=form)
+
+@app.route('/delete_note/<int:id>', methods=['GET','POST'])
+def delete_note(id):
+    if request.method == 'POST':
+        note_to_delete = Note.query.get_or_404(id)
+
+        db.session.delete(note_to_delete)
+        db.session.commit()
+
+    return redirect(url_for('index'))
+
+def load_notes():
+    global notes
+    try:
+        with open('notes.json', 'r') as file:
+            notes = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        notes = []
+
+    return notes
+
