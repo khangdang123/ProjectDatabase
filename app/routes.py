@@ -46,8 +46,8 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
- @app.route('/index')
- def index():
+@app.route('/index')
+def index():
     db.create_all()
     notes = Note.query.all()
     load_notes()
