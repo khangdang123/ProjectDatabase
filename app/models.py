@@ -29,7 +29,15 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post {}>'.format(self.body)
 
-
 @login.user_loader
 def load_user(id):
-    return User.query.get(init(id))
+    return User.query.get(int(id))
+
+class Note(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(120), nullable=False)
+    content = db.Column(db.String(255), nullable=False)  # Adjust the length as needed
+
+    def __repr__(self):
+        return f'<Note {self.id}: {self.title}>'
+

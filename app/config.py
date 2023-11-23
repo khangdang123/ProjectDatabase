@@ -9,6 +9,6 @@ class Config(object):
 
 app.config.from_mapping(
         SECRET_KEY = ‘NoteApp',
-        SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db'$
+        SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db'),
         SQLALCHEMY_TRACK_MODIFICATIONS = False)
 
