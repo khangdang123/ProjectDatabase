@@ -7,7 +7,9 @@ When making a note app there is 2 main concerns for the developers of the progra
 
 1. How secure should the information of the notes be for each user?
     a. Should this information be so secured it shall only be accessible by the user and no one else?
+
     b. Or should the information be secure enough where only the developers or certain developers be allowed to access it along with the user.
+
 2. Should morally reprehensible or illegal information be stored in the notes?
    a.Who determines what should and should not be allowed in the app? 
 
