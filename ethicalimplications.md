@@ -9,9 +9,11 @@ When making a note app there is 2 main concerns for the developers of the progra
     a. Should this information be so secured it shall only be accessible by the user and no one else?
     b. Or should the information be secure enough where only the developers or certain developers be allowed to access it along with the user.
 2. Should morally reprehensible or illegal information be stored in the notes?
-   a. Who determines what should and should not be allowed in the app? 
-   b. If a certain guideline is enacted, how should the enforcement of these rules be enacted? Manual? Automatic or user submited review? 
-    c. If there is a private not how would the enforcement of this be completed?
+   a.Who determines what should and should not be allowed in the app? 
+
+   b.If a certain guideline is enacted, how should the enforcement of these rules be enacted? Manual? Automatic or user submited review? 
+
+    c.If there is a private not how would the enforcement of this be completed?
 
 By undertaking a note app there must be a balance between security and safety, a bias towards one particular side of the scale can attract attention from those
 who could wish to abuse the side of the scale in their power.
