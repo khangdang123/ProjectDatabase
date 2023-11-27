@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, flash, redirect, request, url_for
-from app.forms import LoginForm, RegistrationForm, CreateNote
+from app.forms import LoginForm, RegistrationForm, CreateNote, EditNoteForm
 from flask_login import current_user, login_user, logout_user
 from app.models import User, Note
 from werkzeug.urls import url_parse
@@ -91,4 +91,32 @@ def load_notes():
         notes = []
 
     return notes
+
+@app.route('/edit_note/<int:note_id>', methods=['GET', 'POST'])
+def edit_note(note_id):
+    note = Note.query.get(note_id)
+
+    if not note:
+        return "Note not found", 404
+
+    form = EditNoteForm(obj=note)
+
+    if request.method == 'POST' and form.validate_on_submit():
+        form.populate_obj(note)
+
+        # Commit the changes to the database
+        db.session.commit()
+
+        flash('Note updated successfully!', 'success')
+        return redirect(url_for('index'))
+
+    return render_template('edit_note.html', form=form, note=note)
+
+@app.route('/note/<int:note_id>')
+def show_note(note_id):
+    note = Note.query.get(note_id)
+    if note:
+        return render_template('note.html', note=note)
+    else:
+        return "Note not found", 404
 
