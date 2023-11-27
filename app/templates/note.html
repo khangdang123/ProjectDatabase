@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Note Detail</title>
+</head>
+<body>
+   <h1>Note Detail</h1>
+
+
+   <div>
+       <h2>{{ note.title }}</h2>
+       <p>{{ note.content }}</p>
+
+
+       <!-- Display existing comments -->
+       <h3>Comments</h3>
+       <ul>
+           {% for comment in note.comments %}
+               <li>{{ comment.text }}</li>
+           {% endfor %}
+       </ul>
+
+
+       <!-- Form to add a new comment -->
+       <form method="post">
+           {% if comment_form is defined %}
+               {{ comment_form.csrf_token }}
+               {{ comment_form.text.label }}
+               {{ comment_form.text(size=20) }}
+               {{ comment_form.submit }}
+           {% else %}
+               <p>Comment form is not defined.</p>
+           {% endif %}
+       </form>
+
+
+       <!-- Button to go back to index.html -->
+       <a href="{{ url_for('index') }}">Back to Notes</a>
+   </div>
+</body>
+</html>
+

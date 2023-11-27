@@ -3,7 +3,7 @@
 2. Edit Content of notes <The user should be able to edit the content of the notes that they created>
 3. Delete Notes <The user should be able to delete any notes that they created>
 4. Share Notes <The user should be able to share their notes by creating a link or a download file>
-5. Save as draft <The user should be able to save an in-progress note as a draft before it is shared publicly or privately>
+5. View Details of Note <The user should be able to pop out their notes in a different window that showcases comments>
 6. Add comments <The user should be able to add comments on their notes>
 7. Add attachments <The user should be able to add certain types of attachments to their notes>
 8. Advanced Search <The user should be able to search for titles of notes and or keywords in their notes>
@@ -90,16 +90,14 @@
       - The system prompts the user to establish an internet connection before trying to share
 
 #5 Use Case (Jonathan) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui5.JPG)
-   - **Use Case Name:** Save as Draft
-   - **Summary:** The user should be able to save a draft a note for further editing without publishing/sharing said notes woth a title for reference 
+   - **Use Case Name:** View Details
+   - **Summary:** The user should be able to expand their notes into a seperate window to read the title, content and comments of a note 
    - **Pre-Conditions:** The user should have a saved note, created an account and be in the create note or edit note section.
-   - **Trigger:** User presses a button near the top corner that is marked as "Save as Draft".
+   - **Trigger:** User presses a button near the top corner that is marked as "View Details"
    - **Primary Sequence:**
-     1. Application asks for a name for the draft
-     2. User inputs a name in the application and clicks "ok"
-     3. Application saves the note with a unique identifier.
-     4. Application displays a confirmation message indicating the note has been saved correctly.
-   - **Primary Postcondition:** Note is saved under a seperate section of the account titled as "Drafts", this section is by default only viewable by the user.
+     1. Application should expand the notes into a seperate window
+     2. This window should show the title of note in bold, contents under it and then a seperate section for comments
+   - **Primary Postcondition:** User is able to exit the detail page by clicking a back button
    - **Alternate Sequence:**
     1. The user pressed the save as draft button while not connected to the internet
       - The system displays an error message to the user
