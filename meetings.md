@@ -9,3 +9,7 @@
 ### 2023-11-17 at 12:00
 - All members in the Group
 - Working on redo the milestone 1 assignment and select the 9 features needed of notes application.  
+
+### 2023-11-26 at 4:00
+- All members of the Group
+- Worked on the final 4 requirements in order to meet the requirements for milestone 2. 
