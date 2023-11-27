@@ -3,7 +3,7 @@
 2. Edit Content of notes <The user should be able to edit the content of the notes that they created>
 3. Delete Notes <The user should be able to delete any notes that they created>
 4. Share Notes <The user should be able to share their notes by creating a link or a download file>
-5. Save as draft <The user should be able to save an in-progress note as a draft before it is shared publicly or privately>
+5. View Details of Note <The user should be able to pop out their notes in a different window that showcases comments>
 6. Add comments <The user should be able to add comments on their notes>
 7. Add attachments <The user should be able to add certain types of attachments to their notes>
 8. Advanced Search <The user should be able to search for titles of notes and or keywords in their notes>
