@@ -4,15 +4,15 @@ Welcome to Project Database: Note App – a simple note-taking website app. This
 
 # Functionality
 List of the following features that are implemented in Note App:
-1) Create Notes <Khang>
-2) Edit Content of Notes <Jordan>
-3) Delete Notes <Khang>
-4) View Details <Jonathan>
-5) Sort Notes <Andy>
-6) Rename Notes <Jordan>
-7) Make an account <Khang>
-8) Log in to account <Khang>
-9) Log out to account <Khang>
+1) Create Notes [Khang]
+2) Edit Content of Notes [Jordan]
+3) Delete Notes [Khang]
+4) View Details [Jonathan]
+5) Sort Notes [Andy]
+6) Rename Notes [Jordan]
+7) Make an account [Khang]
+8) Log in to account [Jonathan]
+9) Log out to account [Andy]
 
 # Installation
 First off, download or clone our repository so you have all of the correct files needed to run our website! To be able to use our app without any errors you are required to download these plugins/packages listed below into your terminal or favorite Python IDE. (commands listed below have syntax for terminal usage, BEWARE!)
