@@ -142,17 +142,21 @@ def sort():
 
 @app.route('/note/<int:note_id>', methods=['GET', 'POST'])
 def show_detail(note_id):
-    note = Note.query.get(note_id)
+   note = Note.query.get(note_id)
 
-    if not note:
-        return "Note not found", 404
 
-    comment_form = CommentForm()  # Create an instance of the CommentForm
+   if not note:
+       return "Note not found", 404
 
-    if request.method == 'POST' and comment_form.validate_on_submit():
-        new_comment = Comment(text=comment_form.text.data, note=note)
-        db.session.add(new_comment)
-        db.session.commit()
-        flash('Comment added successfully!', 'success')
 
-    return render_template('note.html', note=note, comment_form=comment_form)
+   comment_form = CommentForm()  # Create an instance of the CommentForm
+
+
+   if request.method == 'POST' and comment_form.validate_on_submit():
+       new_comment = Comment(text=comment_form.text.data, note=note)
+       db.session.add(new_comment)
+       db.session.commit()
+       flash('Comment added successfully!', 'success')
+
+
+   return render_template('note.html', note=note, comment_form=comment_form)
