@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,14 +58,10 @@
     </div>
 
     <div class="note-container">
-
+        {% for note in notes %}
             <div class="note">
                 <h4>{{ note.title }}</h4>
                 <p>{{ note.content }}</p>
-
-                <!-- Link to view note details, including comments -->
-                <a href="{{ url_for('show_note', note_id=note.id) }}">View Details</a>
-
                 <form action="/delete_note/{{ note.id }}" method="post">
                     <button type="submit">Delete</button>
                 </form>
