@@ -1,4 +1,3 @@
-200 words
 In undertaking a Note app, there is an ethical concern of security, morally questionable information being stored 
 in the system and the ethics of whether our app should forgoe one or the other in order to perserve the other.
 
