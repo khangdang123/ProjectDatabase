@@ -153,7 +153,6 @@ def sort():
    db.create_all()
    notes = Note.query.all()
 
-
    if request.method == 'POST':
        if 'sort_button' in request.form:
            sort_option = request.form['sort_option']
@@ -166,25 +165,7 @@ def sort():
            elif sort_option == 'id':
                notes = sorted(notes, key=lambda x: x.id)
 
-
    return render_template('index.html', notes=notes)
-
-@app.route('/index/', methods=['GET', 'POST'])
-def sort():
-    db.create_all()
-    notes = Note.query.all()
-
-    if request.method == 'POST':
-        if 'sort_button' in request.form:
-            sort_option = request.form['sort_option']
-
-            if sort_option == 'title':
-                notes = sorted(notes, key=lambda x: x.title)
-            elif sort_option == 'content':
-                notes = sorted(notes, key=lambda x: x.content)
-
-    return render_template('index.html', notes=notes)
-
 @app.route('/note/<int:note_id>', methods=['GET', 'POST'])
 def show_detail(note_id):
    note = Note.query.get(note_id)
@@ -202,6 +183,5 @@ def show_detail(note_id):
        db.session.add(new_comment)
        db.session.commit()
        flash('Comment added successfully!', 'success')
-
 
    return render_template('note.html', note=note, comment_form=comment_form)
