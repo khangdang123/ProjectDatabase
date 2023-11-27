@@ -147,7 +147,7 @@ def show_detail(note_id):
     if not note:
         return "Note not found", 404
 
-    comment_form = CommentForm()
+    comment_form = CommentForm()  # Create an instance of the CommentForm
 
     if request.method == 'POST' and comment_form.validate_on_submit():
         new_comment = Comment(text=comment_form.text.data, note=note)
