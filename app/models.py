@@ -33,11 +33,17 @@ class Post(db.Model):
 def load_user(id):
     return User.query.get(int(id))
 
+class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String(255), nullable=False)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    note_id = db.Column(db.Integer, db.ForeignKey('note.id'))
+
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), nullable=False)
     content = db.Column(db.String(255), nullable=False)  # Adjust the length as needed
-
+    comments = db.relationship('Comment', backref='note', lazy='dynamic')
     def __repr__(self):
         return f'<Note {self.id}: {self.title}>'
 
