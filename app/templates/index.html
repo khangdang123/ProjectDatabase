@@ -47,8 +47,9 @@
    <div class="header">
        <h1>Notes App</h1>
        <h3>Create a new note:</h3>
-       <a href="{{ url_for('create_note') }}" class="login-link">Create</a>
-
+       <a href="{{ url_for('create_note') }}" class="login-link">
+           <button type="submit">Create</button>
+       </a>
 
        <!-- Sorting Form -->
        <form method="post" style="display: inline;">
