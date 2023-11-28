@@ -30,7 +30,6 @@ Required Libraries/Packages:
 * pip install flask-login
 * pip install email-validator
 * pip install Werkzeug==2.3.0
-* pip install config
 * flask db init
 * flask db upgrade
 
