@@ -189,3 +189,19 @@ def show_detail(note_id):
 
 
    return render_template('note.html', note=note, comment_form=comment_form)
+
+@app.route('/search', methods=['POST'])
+def search():
+    query = request.form.get('query')
+
+    if query:
+        # Use the Note model to query the database for notes containing the search query
+        notes = Note.query.filter(
+            (Note.title.ilike(f"%{query}%")) | (Note.content.ilike(f"%{query}%"))
+        ).all()
+    else:
+        # If no query is provided, return all notes
+        notes = Note.query.all()
+
+    return render_template('search_results.html', query=query, notes=notes)
+

@@ -44,7 +44,12 @@
         <h1>Notes App</h1>
         <h3>Create a new note:</h3>
         <a href="{{ url_for('create_note') }}" class="login-link">Create</a>
-
+        <!-- Add this form inside the header section or wherever you want the search bar -->
+        <form action="{{ url_for('search') }}" method="post" style="display: inline;">
+            <label for="query">Search:</label>
+            <input type="text" id="query" name="query" placeholder="Enter your search">
+            <button type="submit">Search</button>
+        </form>
         <!-- Sorting Form -->
         <form method="post" style="display: inline;">
             <label for="sort_option">Sort by:</label>
@@ -69,6 +74,7 @@
             </div>
         {% endfor %}
     </div>
+
 </body>
 </html>
 {% endblock %}
