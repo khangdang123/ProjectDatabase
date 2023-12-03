@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Feed</title>
+</head>
+<body>
+    <h1>Latest News</h1>
+
+    <form method="post" action="/news">
+        <label for="search_term">Search for articles:</label>
+        <input type="text" id="search_term" name="search_term" value="{{ search_term }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <ul>
+        {% for article in articles %}
+            <li>
+                <strong>{{ article.title }}</strong>
+                <p>{{ article.author }}</p>
+                <img src="{{ article.img }}" alt="{{ article.title }}">
+                <div>
+                    <a href="{{ article.url }}" target="_blank">Read more</a>
+                </div>
+            </li>
+        {% endfor %}
+</body>
+</html>
+{% endblock %}
