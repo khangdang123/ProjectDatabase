@@ -5,7 +5,7 @@ from flask_login import current_user, login_user, logout_user
 from app.models import User, Note, Comment
 from werkzeug.urls import url_parse
 from app import db
-import json
+import json, requests
 
 # Create an array for variable 'notes'
 notes = []
@@ -230,3 +230,40 @@ def show_detail(note_id):
 
    # Render the 'note.html' template with the note and comment form data
    return render_template('note.html', note=note, comment_form=comment_form)
+
+@app.route('/news', methods=['GET', 'POST'])
+def news():
+    if request.method == 'POST':
+        search_term = request.form.get('search_term', '')
+    else:
+        search_term = request.args.get('search_term', '')
+
+    params = {
+        'access_key': 'cf3b6b3d28b18a7f0b380d7a89b5ea30',
+        'countries': 'us',
+        'sort': 'published_desc',
+        'keywords': search_term,
+    }
+
+    response = requests.get(MEDIASTACK_API_URL, params=params)
+
+    if response.status_code == 200:
+        data = response.json()
+        articles = parse_articles(data)
+        return render_template('news.html', articles=articles, search_term=search_term, notes=notes)
+
+def parse_articles(data):
+    articles = []
+    counter = 0
+
+    while len(articles) < 4 and counter < len(data.get("data", [])):
+        if "image" in data["data"][counter] and data["data"][counter]["image"]:
+            author = data["data"][counter]["author"]
+            title = data["data"][counter]["title"]
+            img = data["data"][counter]["image"]
+            url = data["data"][counter]["url"]
+            article = {"author": author, "title": title, "img": img, "url": url}
+            articles.append(article)
+        counter += 1
+
+    return articles
