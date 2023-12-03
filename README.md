@@ -29,6 +29,7 @@ Required Libraries/Packages:
 * pip install flask-migrate
 * pip install flask-login
 * pip install email-validator
+* pip install Flask requests
 * pip install Werkzeug==2.3.0
 * flask db init
 * flask db upgrade
