@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +30,10 @@
            box-sizing: border-box;
        }
 
+       .button-form {
+           display: inline-block;
+           margin-right: 2px;
+       }
 
        .note {
            width: calc(20% - 20px);
@@ -47,11 +50,7 @@
    <div class="header">
        <h1>Notes App</h1>
        <h3>Create a new note:</h3>
-       <a href="{{ url_for('create_note') }}" class="login-link">
-           <button type="submit">Create</button>
-       </a>
-
-       <!-- Sorting Form -->
+      
        <form method="post" style="display: inline;">
            <label for="sort_option">Sort by:</label>
            <select id="sort_option" name="sort_option">
@@ -61,6 +60,14 @@
            </select>
            <button type="submit" name="sort_button">Sort</button>
        </form>
+
+       <a href="{{ url_for('create_note') }}" class="login-link button-form">
+           <button type="submit">Create</button>
+       </a>
+
+       <a href="{{ url_for('news') }}" class="login-link button-form">
+           <button type="submit">News</button>
+       </a>
    </div>
 
 
@@ -70,17 +77,16 @@
                <h4>{{ note.title }}</h4>
                <p>{{ note.content }}</p>
 
-
                <!-- Link to view note details, including comments -->
-               <a href="{{ url_for('show_note', note_id=note.id) }}">
+               <a href="{{ url_for('show_note', note_id=note.id) }}" class="button-form">
                    <button type="submit">View Details</button>
                </a>
 
-               <form action="/delete_note/{{ note.id }}" method="post">
+               <form action="/delete_note/{{ note.id }}" method="post" class="button-form">
                    <button type="submit">Delete</button>
                </form>
 
-               <form action="/edit_note/{{ note.id }}" method="post">
+               <form action="/edit_note/{{ note.id }}" method="post" class="button-form">
                    <button type="submit">Edit</button>
                </form>
            </div>
