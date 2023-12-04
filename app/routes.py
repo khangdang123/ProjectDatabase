@@ -10,6 +10,9 @@ import json, requests
 # Create an array for variable 'notes'
 notes = []
 
+MEDIASTACK_API_KEY = 'YOUR_MEDIASTACK_API_KEY'
+MEDIASTACK_API_URL = 'http://api.mediastack.com/v1/news'
+
 @app.route('/')
 def home():
    # Renders the 'home.html' template when users in the Root URL.
