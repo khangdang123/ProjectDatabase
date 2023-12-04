@@ -76,6 +76,11 @@
            <div class="note">
                <h4>{{ note.title }}</h4>
                <p>{{ note.content }}</p>
+               <ul>
+                    {% for comment in note.comments %}
+                        <p> Comment: {{ comment.text }}</p>
+                    {% endfor %}
+                </ul>
 
                <!-- Link to view note details, including comments -->
                <a href="{{ url_for('show_note', note_id=note.id) }}" class="button-form">
