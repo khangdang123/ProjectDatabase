@@ -2,7 +2,7 @@
 1. Create Notes <The user should be able to create a new empty note>
 2. Edit Content of notes <The user should be able to edit the content of the notes that they created>
 3. Delete Notes <The user should be able to delete any notes that they created>
-4. Share Notes <The user should be able to share their notes by creating a link or a download file>
+4. Share Notes <The user should be able to share their notes by downloading the note as a PDF>
 5. View Details of Note <The user should be able to pop out their notes in a different window that showcases comments>
 6. Add comments <The user should be able to add comments on their notes>
 7. Add attachments <The user should be able to add certain types of attachments to their notes>
