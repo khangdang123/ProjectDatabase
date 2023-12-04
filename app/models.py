@@ -74,3 +74,7 @@ class Note(db.Model):
    # Function that returns a string representing the object.
    def __repr__(self):
        return f'<Note {self.id}: {self.title}>'
+def get_note_by_id(note_id):
+   # Query the database to get a note by its ID
+   note = Note.query.get(note_id)
+   return note

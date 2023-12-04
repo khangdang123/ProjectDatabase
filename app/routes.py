@@ -1,8 +1,9 @@
-from app import app
-from flask import render_template, flash, redirect, request, url_for
+from app import app, pdfkit_config
+from flask import render_template, flash, redirect, request, url_for, send_file
 from app.forms import LoginForm, RegistrationForm, CreateNote, EditNoteForm, CommentForm
 from flask_login import current_user, login_user, logout_user
-from app.models import User, Note, Comment
+from app.models import User, Note, Comment, get_note_by_id
+from pdfkit import pdfkit
 from werkzeug.urls import url_parse
 from app import db
 import json, requests
@@ -256,3 +257,23 @@ def parse_articles(data):
         counter += 1
 
     return articles
+
+
+@app.route('/note/<int:note_id>', methods=['GET'])
+def download_pdf(note_id):
+    if request.method == 'GET':
+        # Fetch note data based on note_id (adjust as needed based on your data model)
+        note = get_note_by_id(note_id)
+
+        # Render the HTML template
+        rendered_html = render_template('template.html', note=note)
+
+        # Generate PDF from rendered HTML
+        pdfkit.from_string(rendered_html, 'output.pdf',configuration=pdfkit_config)
+
+        # Send the generated PDF as a file download
+        return send_file('output.pdf', as_attachment=True)
+    else:
+        # Handle POST requests (if needed)
+        return "Method not allowed", 405  # 405 Method Not Allowed status code
+

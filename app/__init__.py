@@ -1,13 +1,17 @@
 # Import all the modules that we need to initialize in this project: 
 from flask import Flask
-from app.config import Config
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 from flask_login import LoginManager
-import os
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+import pdfkit
+from app.config import Config
 
 # Create an instance of Flask class,
 app = Flask(__name__)
+
+
+# Configure pdfkit
+pdfkit_config = pdfkit.configuration(wkhtmltopdf='C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe')
 
 # Create a location for a database to located.
 app.config.from_object(Config)
