@@ -165,20 +165,6 @@ def edit_note(note_id):
    # Render the 'edit_note.html' template with the form and note data
    return render_template('edit_note.html', form=form, note=note)
 
-
-@app.route('/note/<int:note_id>')
-def show_note(note_id):
-   # Query the note with the specified ID from the database
-   note = Note.query.get(note_id)
-   # If note existed
-   if note:
-       # Render the 'note.html' template with the note data
-       return render_template('note.html', note=note)
-   else:
-       # Print Message, Note not found
-       return "Note not found", 404
-
-
 @app.route('/index/', methods=['GET', 'POST'])
 def sort():
    # Create the database tables if they do not exist
