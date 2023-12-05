@@ -1,5 +1,8 @@
-from app import db, login
+import jwt
+from app import db, login, app
 from datetime import datetime
+from itsdangerous import URLSafeTimedSerializer as Serializer
+from time import time
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
@@ -28,6 +31,21 @@ class User(UserMixin, db.Model):
    # Function that returns a string representing the object.
    def __repr__(self):
        return '<User {}>'.format(self.username)
+
+   def get_reset_password_token(self, expires_sec=600):
+       s = Serializer(app.config['SECRET_KEY'], expires_sec)
+       return s.dumps({'user_id': self.id}).decode('utf-8')
+
+   @staticmethod
+   def verify_reset_password_token(token):
+       s = Serializer(app.config['SECRET_KEY'])
+       try:
+           user_id = s.loads(token)['user_id']
+       except:
+           return None
+       return User.query.get(user_id)
+
+
 
 # Set up the Post table in Database
 class Post(db.Model):
@@ -74,7 +92,7 @@ class Note(db.Model):
    # Function that returns a string representing the object.
    def __repr__(self):
        return f'<Note {self.id}: {self.title}>'
-def get_note_by_id(note_id):
-   # Query the database to get a note by its ID
-   note = Note.query.get(note_id)
-   return note
+
+
+
+

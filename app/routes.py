@@ -1,10 +1,11 @@
-from app import app, pdfkit_config
+from flask_mail import Message
+from app import app, mail
 from flask import render_template, flash, redirect, request, url_for, send_file
-from app.forms import LoginForm, RegistrationForm, CreateNote, EditNoteForm, CommentForm
+from app.forms import LoginForm, RegistrationForm, CreateNote, EditNoteForm, CommentForm, ResetPasswordRequestForm, \
+    ResetPasswordForm
 from flask_login import current_user, login_user, logout_user
-from app.models import User, Note, Comment, get_note_by_id
-from pdfkit import pdfkit
-from werkzeug.urls import url_parse
+from app.models import User, Note, Comment
+#from werkzeug.urls import url_parse
 from app import db
 import json, requests
 
@@ -259,21 +260,51 @@ def parse_articles(data):
     return articles
 
 
-@app.route('/note/<int:note_id>', methods=['GET'])
-def download_pdf(note_id):
-    if request.method == 'GET':
-        # Fetch note data based on note_id (adjust as needed based on your data model)
-        note = get_note_by_id(note_id)
+@app.route('/reset_password_request', methods=['GET', 'POST'])
+def reset_password_request():
+    form = ResetPasswordRequestForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user:
+            send_reset_email(user)
+        flash('Check your email for instructions to reset your password')
+        return redirect(url_for('login'))
+    return render_template('reset_password_request.html', title='Reset Password', form=form)
 
-        # Render the HTML template
-        rendered_html = render_template('template.html', note=note)
 
-        # Generate PDF from rendered HTML
-        pdfkit.from_string(rendered_html, 'output.pdf',configuration=pdfkit_config)
+@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    user = User.verify_reset_password_token(token)
 
-        # Send the generated PDF as a file download
-        return send_file('output.pdf', as_attachment=True)
-    else:
-        # Handle POST requests (if needed)
-        return "Method not allowed", 405  # 405 Method Not Allowed status code
+    if not user:
+        return redirect(url_for('home'))  # Redirect to home or login page
+
+    form = ResetPasswordForm()
+
+    if form.validate_on_submit():
+        # Set the user's new password and commit the change to the database
+        user.set_password(form.password.data)
+        db.session.commit()
+
+        flash('Congratulations! Your password has been reset.')
+        return redirect(url_for('login'))
+
+    return render_template('reset_password.html', title='Reset Password', form=form)
+
+
+def send_reset_email(user):
+    token = user.get_reset_password_token()
+    token_str = token.decode('utf-8')  # Decode bytes to string
+    reset_url = url_for('reset_password', token=token_str, _external=True)
+
+    msg = Message('Password Reset Request', sender='noreply@example.com', recipients=[user.email])
+    msg.body = f'''To reset your password, visit the following link:
+{reset_url}
+
+If you did not make this request, simply ignore this email, and no changes will be made.
+'''
+    mail.send(msg)
+
+
+
 

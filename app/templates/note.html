@@ -25,9 +25,6 @@
             {% endif %}
         </form>
         <a href="{{ url_for('index') }}">Back to Notes</a>
-        <a href="{{ url_for('download_pdf', note_id=note.id) }}" style="display:inline-block;" download="output.pdf">
-            Download as PDF
-        </a>
     </div>
 </body>
 </html>
