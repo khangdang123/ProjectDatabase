@@ -305,3 +305,20 @@ def parse_articles(data):
         counter += 1
     # Return the list of parsed articles
     return articles
+
+
+def search():
+    query = request.form.get('query')
+
+    if query:
+        # Use the Note model to query the database for notes containing the search query
+        notes = Note.query.filter(
+            (Note.title.ilike(f"%{query}%")) | (Note.content.ilike(f"%{query}%"))
+        ).all()
+    else:
+        # If no query is provided, return all notes
+        notes = Note.query.all()
+
+    previous_page = request.referrer
+
+    return render_template('search_results.html', previous_page=previous_page,query=query,notes=notes)

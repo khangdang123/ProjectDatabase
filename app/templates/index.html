@@ -1,106 +1,78 @@
-{% extends "base.html" %}
-
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Notes App</title>
-   <style>
-       body {
-           margin: 0;
-           padding: 0;
-           font-family: Arial, sans-serif;
-       }
+    <title>Notes App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        .header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
 
-       .header {
-           background-color: #f2f2f2;
-           padding: 20px;
-           text-align: center;
-       }
+        .note-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-
-       .note-container {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: flex-start;
-           max-width: 1600px;
-           margin: 0 auto;
-           padding: 20px;
-           box-sizing: border-box;
-       }
-
-       .button-form {
-           display: inline-block;
-           margin-right: 2px;
-       }
-
-       .note {
-           width: calc(20% - 20px);
-           height: 300px;
-           border: 1px solid #ccc;
-           margin: 0 10px 30px 10px;
-           padding: 10px;
-           overflow: auto;
-           box-sizing: border-box;
-       }
-   </style>
+        .note {
+            width: calc(20% - 20px);
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 0 10px 30px 10px;
+            padding: 10px;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-   <div class="header">
-       <h1>Notes App</h1>
-       <h3>Create a new note:</h3>
-      
-       <form method="post" style="display: inline;">
-           <label for="sort_option">Sort by:</label>
-           <select id="sort_option" name="sort_option">
-               <option value="title">A-Z</option>
-               <option value="content">Description</option>
-               <!-- Add more sorting options if needed -->
-           </select>
-           <button type="submit" name="sort_button">Sort</button>
-       </form>
+    <div class="header">
+        <h1>Notes App</h1>
+        <h3>Create a new note:</h3>
+        <a href="{{ url_for('create_note') }}" class="login-link">Create</a>
+        <!-- Add this form inside the header section or wherever you want the search bar -->
+        <form action="{{ url_for('search') }}" method="post" style="display: inline;">
+            <label for="query">Search:</label>
+            <input type="text" id="query" name="query" placeholder="Enter your search">
+            <button type="submit">Search</button>
+        </form>
+        <!-- Sorting Form -->
+        <form method="post" style="display: inline;">
+            <label for="sort_option">Sort by:</label>
+            <select id="sort_option" name="sort_option">
+                <option value="title">A-Z</option>
+                <option value="content">Description</option>
+                <!-- Add more sorting options if needed -->
+            </select>
+            <button type="submit" name="sort_button">Sort</button>
+        </form>
+    </div>
 
-       <a href="{{ url_for('create_note') }}" class="login-link button-form">
-           <button type="submit">Create</button>
-       </a>
+    <div class="note-container">
+        {% for note in notes %}
+            <div class="note">
+                <h4>{{ note.title }}</h4>
+                <p>{{ note.content }}</p>
+                <form action="/delete_note/{{ note.id }}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+                <a href="{{ url_for('edit_note', note_id=note.id) }}">Edit</a>
+            </div>
+        {% endfor %}
+    </div>
 
-       <a href="{{ url_for('news') }}" class="login-link button-form">
-           <button type="submit">News</button>
-       </a>
-   </div>
-
-
-   <div class="note-container">
-       {% for note in notes %}
-           <div class="note">
-               <h4>{{ note.title }}</h4>
-               <p>{{ note.content }}</p>
-               <ul>
-                    {% for comment in note.comments %}
-                        <p> Comment: {{ comment.text }}</p>
-                    {% endfor %}
-                </ul>
-
-               <!-- Link to view note details, including comments -->
-               <a href="{{ url_for('show_detail', note_id=note.id) }}" class="button-form">
-                   <button type="submit">View Details</button>
-               </a>
-
-               <form action="/delete_note/{{ note.id }}" method="post" class="button-form">
-                   <button type="submit">Delete</button>
-               </form>
-
-               <form action="/edit_note/{{ note.id }}" method="post" class="button-form">
-                   <button type="submit">Edit</button>
-               </form>
-
-               <form action="/ReTitle_note/{{ note.id }}" method="post" class="button-form">
-                   <button type="submit">ReName</button>
-               </form>
-           </div>
-       {% endfor %}
-   </div>
 </body>
 </html>
 {% endblock %}
