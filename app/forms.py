@@ -42,6 +42,11 @@ class EditNoteForm(FlaskForm):
    title = StringField('Title', validators=[DataRequired()])
    content = TextAreaField('Content', validators=[DataRequired()])
 
+# ReName form
+class ReTitleForm(FlaskForm):
+   title = StringField('Title', validators=[DataRequired()])
+   content = TextAreaField('Content', validators=[DataRequired()])
+
 # Comment Note form
 class CommentForm(FlaskForm):
    text = StringField('Comment', validators=[DataRequired()])
