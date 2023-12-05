@@ -307,7 +307,7 @@ def parse_articles(data):
     # Return the list of parsed articles
     return articles
 
-@app.route('/reset_password', methods=['GET', 'POST'])
+  @app.route('/reset_password', methods=['GET', 'POST'])
   # Ensures that the user is logged in
 def reset_password():
     if not current_user.is_authenticated:
@@ -327,8 +327,25 @@ def reset_password():
             flash('Incorrect current password. Please try again.', 'error')
 
     return render_template('reset_password.html', form=form)
+  
+  
 
+@app.route('/search', methods=['POST'])
+def search():
+    query = request.form.get('query')
 
+    if query:
+        # Use the Note model to query the database for notes containing the search query
+        notes = Note.query.filter(
+            (Note.title.ilike(f"%{query}%")) | (Note.content.ilike(f"%{query}%"))
+        ).all()
+    else:
+        # If no query is provided, return all notes
+        notes = Note.query.all()
+
+    previous_page = request.referrer
+
+    return render_template('search_results.html', query=query, notes=notes, previous_page = previous_page)
 
 
 

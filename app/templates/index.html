@@ -50,7 +50,7 @@
    <div class="header">
        <h1>Notes App</h1>
        <h3>Create a new note:</h3>
-      
+
        <form method="post" style="display: inline;">
            <label for="sort_option">Sort by:</label>
            <select id="sort_option" name="sort_option">
@@ -60,6 +60,12 @@
            </select>
            <button type="submit" name="sort_button">Sort</button>
        </form>
+
+        <form action="{{ url_for('search') }}" method="post" >
+            <label for="query">Search:</label>
+            <input type="text" id="query" name="query" placeholder="Enter your search">
+            <button type="submit">Search</button>
+        </form>
 
        <a href="{{ url_for('create_note') }}" class="login-link button-form">
            <button type="submit">Create</button>
