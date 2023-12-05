@@ -31,23 +31,28 @@ class RegistrationForm(FlaskForm):
        if user is not None:
            raise ValidationError('Please use a different email address.')
 
+
 # Create Note form
 class CreateNote(FlaskForm):
    title = StringField('Title', validators=[DataRequired()])
    note = TextAreaField('Content', validators=[DataRequired(), Length(min=1, max=500)])
    submit = SubmitField('Save')
 
+
 # Edit Note form
 class EditNoteForm(FlaskForm):
    title = StringField('Title', validators=[DataRequired()])
    content = TextAreaField('Content', validators=[DataRequired()])
 
-# ReName form
-class ReTitleForm(FlaskForm):
-   title = StringField('Title', validators=[DataRequired()])
-   content = TextAreaField('Content', validators=[DataRequired()])
 
 # Comment Note form
 class CommentForm(FlaskForm):
    text = StringField('Comment', validators=[DataRequired()])
    submit = SubmitField('Add Comment')
+
+
+class ResetPasswordForm(FlaskForm):
+    current_password = PasswordField('Current Password', validators=[DataRequired()])
+    new_password = PasswordField('New Password', validators=[DataRequired()])
+    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('new_password')])
+    submit = SubmitField('Reset Password')

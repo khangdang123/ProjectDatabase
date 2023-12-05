@@ -1,5 +1,8 @@
-from app import db, login
+import jwt
+from app import db, login, app
 from datetime import datetime
+from itsdangerous import URLSafeTimedSerializer as Serializer
+from time import time
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
@@ -28,6 +31,8 @@ class User(UserMixin, db.Model):
    # Function that returns a string representing the object.
    def __repr__(self):
        return '<User {}>'.format(self.username)
+
+
 
 # Set up the Post table in Database
 class Post(db.Model):
@@ -74,3 +79,7 @@ class Note(db.Model):
    # Function that returns a string representing the object.
    def __repr__(self):
        return f'<Note {self.id}: {self.title}>'
+
+
+
+

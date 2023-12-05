@@ -1,115 +1,30 @@
-{% extends 'base.html' %}
-
-{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Note Detail</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #FFFFFF;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .inner-container {
-      background-color: #F2F2F2;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 80%;
-      max-width: 400px;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-top: 5px; 
-    }
-
-    button {
-      background-color: transparent;
-      color: black;
-      padding: 10px 20px;
-      border: 1px solid black; 
-      border-radius: 3px;
-      cursor: pointer;
-      display: block; 
-      margin-top: 10px; 
-    }
-
-    button:hover {
-      background-color: #0056b3;
-      color: white; 
-    }
-  </style>
+    <title>Note Detail</title>
 </head>
 <body>
-  <div class="container">
-    <div class="inner-container">
-      <h1>Note Detail</h1>
-
-      <div>
+    <h1>Note Detail</h1>
+    <div>
         <h2>{{ note.title }}</h2>
         <p>{{ note.content }}</p>
-
-        <!-- Display existing comments -->
         <h3>Comments</h3>
         <ul>
             {% for comment in note.comments %}
                 <li>{{ comment.text }}</li>
             {% endfor %}
         </ul>
-
-        <!-- Form to add a new comment -->
         <form method="post" action="{{ url_for('show_detail', note_id=note.id) }}">
             {% if comment_form is defined %}
                 {{ comment_form.csrf_token }}
-                {{ comment_form.text.label }}    
+                {{ comment_form.text.label }}
                 {{ comment_form.text(size=20) }}
                 {{ comment_form.submit }}
             {% else %}
                 <p>Comment form is not defined.</p>
             {% endif %}
         </form>
-
-        <!-- Button to go back to index.html -->
         <a href="{{ url_for('index') }}">Back to Notes</a>
-      </div>
     </div>
-  </div>
 </body>
 </html>
-{% endblock %}

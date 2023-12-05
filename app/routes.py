@@ -1,11 +1,12 @@
 from app import app
-from flask import render_template, flash, redirect, request, url_for
-from app.forms import LoginForm, RegistrationForm, CreateNote, EditNoteForm, CommentForm, ReTitleForm
+from flask import render_template, flash, redirect, request, url_for, send_file
+from app.forms import LoginForm, RegistrationForm, CreateNote, EditNoteForm, CommentForm, ResetPasswordForm
 from flask_login import current_user, login_user, logout_user
 from app.models import User, Note, Comment
-from werkzeug.urls import url_parse
+#from werkzeug.urls import url_parse
 from app import db
 import json, requests
+
 
 # Create an array for variable 'notes'
 notes = []
@@ -305,3 +306,29 @@ def parse_articles(data):
         counter += 1
     # Return the list of parsed articles
     return articles
+
+@app.route('/reset_password', methods=['GET', 'POST'])
+  # Ensures that the user is logged in
+def reset_password():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+    form = ResetPasswordForm()
+
+    if form.validate_on_submit():
+        # Verify the user's current password before allowing a reset
+        if current_user.check_password(form.current_password.data):
+            # Set the user's new password and commit the change to the database
+            current_user.set_password(form.new_password.data)
+            db.session.commit()
+
+            flash('Congratulations! Your password has been reset.')
+            return redirect(url_for('index'))
+        else:
+            flash('Incorrect current password. Please try again.', 'error')
+
+    return render_template('reset_password.html', form=form)
+
+
+
+
+
