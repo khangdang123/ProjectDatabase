@@ -1,8 +1,5 @@
-import jwt
-from app import db, login, app
+from app import db, login
 from datetime import datetime
-from itsdangerous import URLSafeTimedSerializer as Serializer
-from time import time
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
