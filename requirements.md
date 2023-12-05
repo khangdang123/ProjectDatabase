@@ -2,7 +2,7 @@
 1. Create Notes <The user should be able to create a new empty note>
 2. Edit Content of notes <The user should be able to edit the content of the notes that they created>
 3. Delete Notes <The user should be able to delete any notes that they created>
-4. Share Notes <The user should be able to share their notes by downloading the note as a PDF>
+4. Reset Password <The user should be able to reset their password if they forgot it>
 5. View Details of Note <The user should be able to pop out their notes in a different window that showcases comments>
 6. Add comments <The user should be able to add comments on their notes>
 7. Add attachments <The user should be able to add certain types of attachments to their notes>
@@ -72,22 +72,21 @@
       - The system displays an error message to the user
       - The system prompts the user to establish an internet connection before trying to delete a note
 
-#4 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui4.png)
-   - **Use Case Name:** Share Notes
-   - **Summary:** The user should be able to share their notes by creating a link or a download file
-   - **Pre-condition:** User is logged into the note-taking application and has an existing note.
-   - **Trigger:** User selects the desired note and clicks on the "Share" option.
+#4 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/UI4.png)
+   - **Use Case Name:** Reset Password
+   - **Summary:** The user should be able to reset their password in their dashboard.
+   - **Pre-condition:** User is logged onto their account.
+   - **Trigger:** User selects the Reset Password button
    - **Primary Sequence:**
-      1. Application generates a shareable link or unique identifier for the selected note.
-      2. User copies the shareable link or identifier.
-      3. User can share the link via email, messaging apps, or social media platforms.
-      4. Recipient clicks on the shared link.
-      5. Application displays the shared note to the recipient.a
-   - **Primary Postconditions:** User successfully shares the selected note with others, and recipients can view the note using the shared link.
+      1. Application pops up a screen for the user to fill in their current password and desired new password.
+      2. User fills in the boxes accordingly with their current password and desired new password.
+      3. User confirms their choices by pressing the button.
+      4. Application brings them back to the home page.
+      5. Application notifies the user they successfully changed their password.
+   - **Primary Postconditions:** User successfully changes their password.
    - **Alternate Sequence:**
-    1. The user pressed the share button while not connected to the internet
-      - The system displays an error message to the user
-      - The system prompts the user to establish an internet connection before trying to share
+    1. The user pressed the change password button while inputting their incorrect current password.
+      - The system displays an error message to the user saying that they inputted the wrong password.
 
 #5 Use Case (Jonathan) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/ui5.JPG)
    - **Use Case Name:** View Details
