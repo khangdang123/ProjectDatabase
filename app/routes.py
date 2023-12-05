@@ -3,7 +3,7 @@ from flask import render_template, flash, redirect, request, url_for, send_file
 from app.forms import LoginForm, RegistrationForm, CreateNote, EditNoteForm, CommentForm, ResetPasswordForm, ReTitleForm
 from flask_login import current_user, login_user, logout_user
 from app.models import User, Note, Comment
-#from werkzeug.urls import url_parse
+from werkzeug.urls import url_parse
 from app import db
 import json, requests
 
