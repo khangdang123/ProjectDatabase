@@ -10,7 +10,9 @@ import json, requests
 # Create an array for variable 'notes'
 notes = []
 
+# Define Mediastack API endpoint key
 MEDIASTACK_API_KEY = 'YOUR_MEDIASTACK_API_KEY'
+# Define Mediastack API endpoint URL
 MEDIASTACK_API_URL = 'http://api.mediastack.com/v1/news'
 
 @app.route('/')
@@ -252,11 +254,13 @@ def show_detail(note_id):
 
 @app.route('/news', methods=['GET', 'POST'])
 def news():
+    # Function to search by keywork in the MediaStack API 
     if request.method == 'POST':
         search_term = request.form.get('search_term', '')
     else:
         search_term = request.args.get('search_term', '')
-
+       
+    # Define parameters for the API request (Access key, countries, sort, and keywords)
     params = {
         'access_key': 'cf3b6b3d28b18a7f0b380d7a89b5ea30',
         'countries': 'us',
@@ -264,25 +268,40 @@ def news():
         'keywords': search_term,
     }
 
+    # Make a GET request to the MediaStack API with the specified parameters
     response = requests.get(MEDIASTACK_API_URL, params=params)
 
+    # Check if the API request was successful (status code 200)
     if response.status_code == 200:
+        # Parse the JSON data from the API response
         data = response.json()
+       
+        # Call the parse_articles function to extract relevant information
         articles = parse_articles(data)
+
+        # Render the 'news.html' template with the extracted articles and search term
         return render_template('news.html', articles=articles, search_term=search_term, notes=notes)
 
+# Function to parse the articles from the API response data
 def parse_articles(data):
-    articles = []
+    # Define an array for variable 'articles'
+    articles = [] 
+    # Counter to keep track of the number of parsed articles
     counter = 0
 
+    # Loop through the data and extract relevant information for up to 4 articles
     while len(articles) < 4 and counter < len(data.get("data", [])):
         if "image" in data["data"][counter] and data["data"][counter]["image"]:
+            # Extract author, title, image URL, and article URL
             author = data["data"][counter]["author"]
             title = data["data"][counter]["title"]
             img = data["data"][counter]["image"]
             url = data["data"][counter]["url"]
+           
+            # Create a dictionary with the extracted information and append it to the list
             article = {"author": author, "title": title, "img": img, "url": url}
             articles.append(article)
+        # Increment the counter
         counter += 1
-
+    # Return the list of parsed articles
     return articles
