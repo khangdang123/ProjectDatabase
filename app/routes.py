@@ -307,6 +307,7 @@ def parse_articles(data):
     return articles
 
 
+@app.route('/search', methods=['POST'])
 def search():
     query = request.form.get('query')
 
@@ -321,4 +322,6 @@ def search():
 
     previous_page = request.referrer
 
-    return render_template('search_results.html', previous_page=previous_page,query=query,notes=notes)
+    return render_template('search_results.html', query=query, notes=notes, previous_page = previous_page)
+
+
