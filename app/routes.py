@@ -203,5 +203,7 @@ def search():
         # If no query is provided, return all notes
         notes = Note.query.all()
 
-    return render_template('search_results.html', query=query, notes=notes)
+    previous_page = request.referrer
+
+    return render_template('search_results.html', previous_page=previous_page,query=query,notes=notes)
 
