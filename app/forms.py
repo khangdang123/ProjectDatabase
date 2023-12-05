@@ -50,7 +50,12 @@ class CommentForm(FlaskForm):
    text = StringField('Comment', validators=[DataRequired()])
    submit = SubmitField('Add Comment')
 
+# ReName form
+class ReTitleForm(FlaskForm):
+   title = StringField('Title', validators=[DataRequired()])
+   content = TextAreaField('Content', validators=[DataRequired()])
 
+# Reset Password form
 class ResetPasswordForm(FlaskForm):
     current_password = PasswordField('Current Password', validators=[DataRequired()])
     new_password = PasswordField('New Password', validators=[DataRequired()])
