@@ -307,8 +307,9 @@ def parse_articles(data):
     # Return the list of parsed articles
     return articles
 
-  @app.route('/reset_password', methods=['GET', 'POST'])
-  # Ensures that the user is logged in
+
+@app.route('/reset_password', methods=['GET', 'POST'])
+# Ensures that the user is logged in
 def reset_password():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
@@ -327,7 +328,6 @@ def reset_password():
             flash('Incorrect current password. Please try again.', 'error')
 
     return render_template('reset_password.html', form=form)
-  
   
 
 @app.route('/search', methods=['POST'])
