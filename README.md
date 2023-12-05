@@ -1,9 +1,9 @@
 # Project Database: Note App
 
-Welcome to Project Database: Note App – a simple note-taking website app. This note-taking app is capable of some basic features as well as some more advanced features such as sorting notes! The current functional requirements that our note taking app is capable of are listed down below!
+Welcome to Project Database: Note App – a simple note-taking website app. This note-taking app is capable of some basic features as well as some more advanced features such as sorting notes! The current functional requirements that our note-taking app is capable of are listed down below!
 
 # Functionality
-List of the following features that are implemented in Note App:
+List of the following features that are implemented in the Note App:
 1) Create Notes [Khang]
 2) Edit Content of Notes [Jordan]
 3) Delete Notes [Khang]
@@ -16,7 +16,7 @@ List of the following features that are implemented in Note App:
 10) Connect with any external API [Khang]
 11) Add Attachments [Andy]
 12) Advanced Search [Jonathan]
-13) Add Comment []
+13) Add Comment [Khang]
 14) Password Reset [Jordan]
 
 # Installation
@@ -35,6 +35,7 @@ Required Libraries/Packages:
 * pip install flask-login
 * pip install email-validator
 * pip install Flask requests
+* pip install Flask-Bootstrap
 * pip install Werkzeug==2.3.0
 * flask db init
 * flask db upgrade
