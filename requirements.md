@@ -72,7 +72,7 @@
       - The system displays an error message to the user
       - The system prompts the user to establish an internet connection before trying to delete a note
 
-#4 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/Ui4.png)
+#4 Use Case (Andy Neidhart) [Sketch](https://github.com/khangdang123/ProjectDatabaseNoteApp/blob/main/images/UI4.png)
    - **Use Case Name:** Reset Password
    - **Summary:** The user should be able to reset their password in their dashboard.
    - **Pre-condition:** User is logged onto their account.
