@@ -79,13 +79,13 @@
 <body>
   <div class="container">
     <div class="inner-container">
-      <h2>Edit Note</h2>
+      <h2>Rename Note</h2>
       <form method="post">
         {{ form.csrf_token }}
         {{ form.hidden_tag() }}
 
-        {{ form.content.label }}
-        {{ form.content }}
+        {{ form.title.label }}
+        {{ form.title }}
         <br>
 
         <input type="submit" value="Save">
@@ -95,3 +95,4 @@
 </body>
 </html>
 {% endblock %}
+

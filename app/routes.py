@@ -7,10 +7,13 @@ from app.models import User, Note, Comment
 from app import db
 import json, requests
 
+
 # Create an array for variable 'notes'
 notes = []
 
+# Define Mediastack API endpoint key
 MEDIASTACK_API_KEY = 'YOUR_MEDIASTACK_API_KEY'
+# Define Mediastack API endpoint URL
 MEDIASTACK_API_URL = 'http://api.mediastack.com/v1/news'
 
 @app.route('/')
@@ -168,6 +171,36 @@ def edit_note(note_id):
    # Render the 'edit_note.html' template with the form and note data
    return render_template('edit_note.html', form=form, note=note)
 
+
+@app.route('/ReTitle_note/<int:note_id>', methods=['GET', 'POST'])
+def ReTitle_note(note_id):
+   # Query the note with the specified ID from the database
+   note = Note.query.get(note_id)
+
+   # If note doesn't exist, print message
+   if not note:
+       return "Note not found", 404
+
+   # Create an instance of the EditNoteForm
+   form = ReTitleForm(obj=note)
+
+   # Check if the request method is POST and the form is valid
+   if request.method == 'POST' and form.validate_on_submit():
+       # Update the note object with the form data
+       form.populate_obj(note)
+
+       # Commit the changes to the database
+       db.session.commit()
+
+       # Print message if note updated succesfully
+       flash('Note updated successfully!', 'success')
+       # Redirect to the index page after updating the note
+       return redirect(url_for('index'))
+
+   # Render the 'edit_note.html' template with the form and note data
+   return render_template('ReTitle.html', form=form, note=note)
+
+
 @app.route('/index/', methods=['GET', 'POST'])
 def sort():
    # Create the database tables if they do not exist
@@ -222,11 +255,13 @@ def show_detail(note_id):
 
 @app.route('/news', methods=['GET', 'POST'])
 def news():
+    # Function to search by keywork in the MediaStack API 
     if request.method == 'POST':
         search_term = request.form.get('search_term', '')
     else:
         search_term = request.args.get('search_term', '')
-
+       
+    # Define parameters for the API request (Access key, countries, sort, and keywords)
     params = {
         'access_key': 'cf3b6b3d28b18a7f0b380d7a89b5ea30',
         'countries': 'us',
@@ -234,27 +269,42 @@ def news():
         'keywords': search_term,
     }
 
+    # Make a GET request to the MediaStack API with the specified parameters
     response = requests.get(MEDIASTACK_API_URL, params=params)
 
+    # Check if the API request was successful (status code 200)
     if response.status_code == 200:
+        # Parse the JSON data from the API response
         data = response.json()
+       
+        # Call the parse_articles function to extract relevant information
         articles = parse_articles(data)
+
+        # Render the 'news.html' template with the extracted articles and search term
         return render_template('news.html', articles=articles, search_term=search_term, notes=notes)
 
+# Function to parse the articles from the API response data
 def parse_articles(data):
-    articles = []
+    # Define an array for variable 'articles'
+    articles = [] 
+    # Counter to keep track of the number of parsed articles
     counter = 0
 
+    # Loop through the data and extract relevant information for up to 4 articles
     while len(articles) < 4 and counter < len(data.get("data", [])):
         if "image" in data["data"][counter] and data["data"][counter]["image"]:
+            # Extract author, title, image URL, and article URL
             author = data["data"][counter]["author"]
             title = data["data"][counter]["title"]
             img = data["data"][counter]["image"]
             url = data["data"][counter]["url"]
+           
+            # Create a dictionary with the extracted information and append it to the list
             article = {"author": author, "title": title, "img": img, "url": url}
             articles.append(article)
+        # Increment the counter
         counter += 1
-
+    # Return the list of parsed articles
     return articles
 
 @app.route('/reset_password', methods=['GET', 'POST'])
