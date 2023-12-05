@@ -13,6 +13,11 @@ List of the following features that are implemented in Note App:
 7) Make an account [Khang]
 8) Log in to account [Jonathan]
 9) Log out to account [Andy]
+10) Connect with any external API [Khang]
+11) Add Attachments [Andy]
+12) Advanced Search [Jonathan]
+13) Add Comment []
+14) Password Reset [Jordan]
 
 # Installation
 First off, download or clone our repository so you have all of the correct files needed to run our website! To be able to use our app without any errors you are required to download these plugins/packages listed below into your terminal or favorite Python IDE. (commands listed below have syntax for terminal usage, BEWARE!)

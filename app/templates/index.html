@@ -68,6 +68,10 @@
        <a href="{{ url_for('news') }}" class="login-link button-form">
            <button type="submit">News</button>
        </a>
+
+       <a href="{{ url_for('reset_password') }}" class="login-link button-form">
+           <button type="submit">Reset Password</button>
+       </a>
    </div>
 
 
@@ -93,6 +97,10 @@
 
                <form action="/edit_note/{{ note.id }}" method="post" class="button-form">
                    <button type="submit">Edit</button>
+               </form>
+
+               <form action="/ReTitle_note/{{ note.id }}" method="post" class="button-form">
+                   <button type="submit">ReName</button>
                </form>
            </div>
        {% endfor %}
