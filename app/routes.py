@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, flash, redirect, request, url_for
-from app.forms import LoginForm, RegistrationForm, CreateNote, EditNoteForm, CommentForm
+from app.forms import LoginForm, RegistrationForm, CreateNote, EditNoteForm, CommentForm, ReTitleForm
 from flask_login import current_user, login_user, logout_user
 from app.models import User, Note, Comment
 from werkzeug.urls import url_parse
@@ -167,6 +167,36 @@ def edit_note(note_id):
 
    # Render the 'edit_note.html' template with the form and note data
    return render_template('edit_note.html', form=form, note=note)
+
+
+@app.route('/ReTitle_note/<int:note_id>', methods=['GET', 'POST'])
+def ReTitle_note(note_id):
+   # Query the note with the specified ID from the database
+   note = Note.query.get(note_id)
+
+   # If note doesn't exist, print message
+   if not note:
+       return "Note not found", 404
+
+   # Create an instance of the EditNoteForm
+   form = ReTitleForm(obj=note)
+
+   # Check if the request method is POST and the form is valid
+   if request.method == 'POST' and form.validate_on_submit():
+       # Update the note object with the form data
+       form.populate_obj(note)
+
+       # Commit the changes to the database
+       db.session.commit()
+
+       # Print message if note updated succesfully
+       flash('Note updated successfully!', 'success')
+       # Redirect to the index page after updating the note
+       return redirect(url_for('index'))
+
+   # Render the 'edit_note.html' template with the form and note data
+   return render_template('ReTitle.html', form=form, note=note)
+
 
 @app.route('/index/', methods=['GET', 'POST'])
 def sort():
