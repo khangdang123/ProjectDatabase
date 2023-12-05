@@ -13,12 +13,6 @@ app.config.from_object(Config)
 app.config['SECRET_KEY'] = 'note app'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
-# Configure things we need to let 1 gmail account automatically send password reset link to users:
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
-
 
 # Initialize a SQLAlchemy database with the setting from the Flask application
 db = SQLAlchemy(app)
