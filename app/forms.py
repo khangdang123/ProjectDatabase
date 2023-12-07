@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Length
+from flask_wtf.file import FileField, FileAllowed
 from app.models import User
 
 # User Login form for accessing their account
@@ -36,6 +37,7 @@ class RegistrationForm(FlaskForm):
 class CreateNote(FlaskForm):
    title = StringField('Title', validators=[DataRequired()])
    note = TextAreaField('Content', validators=[DataRequired(), Length(min=1, max=500)])
+   attachment = FileField('Attachment', validators=[FileAllowed(['png', 'jpg', 'jpeg', 'pdf'])])
    submit = SubmitField('Save')
 
 

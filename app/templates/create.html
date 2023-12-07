@@ -100,6 +100,14 @@
         {% endfor %}
       </div>
 
+      <div class="form-group">
+        {{ form.attachment.label(class="form-control-label") }}
+        {{ form.attachment(class="form-control") }}
+        {% for error in form.attachment.errors %}
+            <span class="text-danger">{{ error }}</span>
+        {% endfor %}
+      </div>
+
       <button type="submit" class="btn btn-primary">Save</button>
     </form>
   </div>
