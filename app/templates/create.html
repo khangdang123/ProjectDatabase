@@ -81,7 +81,7 @@
 <div class="container">
   <div class="inner-container">
     <h2>Create Note</h2>
-    <form method="POST" action="{{ url_for('create_note') }}">
+    <form method="post" action="{{ url_for('create_note') }}" enctype="multipart/form-data">
       {{ form.hidden_tag() }}
 
       <div class="form-group">
@@ -97,6 +97,14 @@
         {{ form.note(class="form-control", placeholder="Enter Note", required="required") }}
         {% for error in form.note.errors %}
           <span class="text-danger">{{ error }}</span>
+        {% endfor %}
+      </div>
+
+      <div class="form-group">
+        {{ form.attachment.label(class="form-control-label") }}
+        {{ form.attachment(class="form-control") }}
+        {% for error in form.attachment.errors %}
+            <span class="text-danger">{{ error }}</span>
         {% endfor %}
       </div>
 
