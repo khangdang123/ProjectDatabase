@@ -16,7 +16,7 @@
 
 ## Non-functional Requirements
 1. Compatible on different web browsers <Google Chrome, Firefox, Safari>
-2. All features of the app should be labeled and bolded for easier usability
+2. All features of the app should be labeled correctly and big enough font size for easier usability
 
 ## Use Cases 
 
