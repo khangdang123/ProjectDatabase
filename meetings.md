@@ -12,4 +12,9 @@
 
 ### 2023-11-26 at 4:00
 - All members of the Group
-- Worked on the final 4 requirements in order to meet the requirements for milestone 2. 
+- Worked on the final 4 requirements in order to meet the requirements for milestone 2.
+
+### 2023-12-07 at 7:00
+- Jordan and Andy
+- Worked on the final requirement in order to meet all the requirements for milestone 3.
+- Recorded final video
