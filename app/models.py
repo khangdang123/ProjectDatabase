@@ -73,7 +73,8 @@ class Note(db.Model):
    # Set up relation with class Comment
    comments = db.relationship('Comment', backref='note', lazy='dynamic')
    #create section for attachments
-   attachment_path = db.Column(db.String(255))
+   attachment_path = db.Column(db.String(64))
+   image = db.Column(db.LargeBinary)
 
    # Function that returns a string representing the object.
    def __repr__(self):

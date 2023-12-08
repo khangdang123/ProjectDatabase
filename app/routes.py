@@ -102,14 +102,20 @@ def create_note():
         title = form.title.data
         note_content = form.note.data
 
+        attachment = form.attachment.data
         # Create a new instance of the Note model with the form data
-        new_note = Note(title=title, content=note_content)
-        if form.attachment.data:
-            attachment = form.attachment.data
-            filename = secure_filename(attachment.filename)
-            attachment_path = save_attachment(attachment)
-            #attachment.save(attachment_path)
-            new_note.attachment_path = attachment_path
+        if attachment:
+            attachment_filename = secure_filename(attachment.filename)
+            print(secure_filename(attachment.filename))
+            picture_path = os.path.join(app.root_path, 'static', attachment_filename)
+            attachment.save(picture_path)
+            attachment_data = attachment.read()
+        else:
+            attachment_filename = None
+            attachment_data = None
+
+        new_note = Note(title=title, content=note_content, attachment_path=attachment_filename, image=attachment_data)
+
         # Add and commit new note to the database
         db.session.add(new_note)
         db.session.commit()
@@ -358,37 +364,3 @@ def search():
 
     return render_template('search_results.html', query=query, notes=notes, previous_page=previous_page)
 
-
-UPLOAD_FOLDER = 'static'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'pdf', 'doc', 'docx'}  # Add more as needed
-
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-@app.route('/save_attachment/<int:note_id>', methods=['POST'])
-def save_attachment(note_id):
-    note = Note.query.get_or_404(note_id)
-
-    if 'attachment' not in request.files:
-        flash('No file part', 'error')
-        return redirect(url_for('show_detail', note_id=note_id))
-
-    attachment = request.files['attachment']
-
-    if attachment.filename == '':
-        flash('No selected file', 'error')
-        return redirect(url_for('show_detail', note_id=note_id))
-
-    if attachment and allowed_file(attachment.filename):
-        filename = secure_filename(attachment.filename)
-        note.attachment_path = os.path.join(app.config['static'], filename)
-        attachment.save(note.attachment_path)
-
-        note.attachment_path = note.attachment_path
-        db.session.commit()
-
-        flash('Attachment saved successfully', 'success')
-        return redirect(url_for('show_detail', note_id=note_id))
-    else:
-        flash('Invalid file type', 'error')
-        return redirect(url_for('show_detail', note_id=note_id))

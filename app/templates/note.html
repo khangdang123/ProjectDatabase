@@ -8,10 +8,13 @@
     <div>
         <h2>{{ note.title }}</h2>
         <p>{{ note.content }}</p>
+
         {% if note.attachment_path %}
             <img src="{{ url_for('static', filename=note.attachment_path) }}" alt="Attachment">
-            <!-- You may use different tags or embed other file types based on your application -->
+        {% else %}
+            <p>No attachment available</p>
         {% endif %}
+
         <h3>Comments</h3>
         <ul>
             {% for comment in note.comments %}
